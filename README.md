@@ -1,2 +1,2 @@
 # hello-word
-Just another repository
+this my repo for experimenting with 1.12.2
