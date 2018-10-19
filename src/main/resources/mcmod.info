@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "modid": "helloworld",
+  "name": "Hello World",
+  "description": "Hello to the world from e99999",
+  "version": "Alpha",
+  "mcversion": "1.12.2",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["e99999"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
