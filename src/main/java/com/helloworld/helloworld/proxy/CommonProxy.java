@@ -3,6 +3,7 @@ package com.helloworld.helloworld.proxy;
 import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.blocks.FirstBlock;
+import com.helloworld.helloworld.items.FirstItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -47,7 +48,9 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemBlock(ModBlocks.firstBlock).setRegistryName(ModBlocks.firstBlock.getRegistryName()));
+    	event.getRegistry().register(new FirstItem());
+    	
+    	event.getRegistry().register(new ItemBlock(ModBlocks.firstBlock).setRegistryName(ModBlocks.firstBlock.getRegistryName()));
     }
 
     
