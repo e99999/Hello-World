@@ -1,0 +1,16 @@
+[
+{
+  "modid": "helloworld",
+  "name": "Hello World",
+  "description": "Hello to the world from e99999",
+  "version": "Alpha",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["e99999"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

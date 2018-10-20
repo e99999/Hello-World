@@ -2,7 +2,7 @@ package com.helloworld.helloworld;
 
 import org.apache.logging.log4j.Level;
 
-import com.helloworld.proxy.CommonProxy;
+import com.helloworld.helloworld.proxy.CommonProxy;
 
 import net.minecraftforge.common.config.Configuration;
 
