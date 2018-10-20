@@ -1,5 +1,8 @@
 package com.helloworld.helloworld.proxy;
 
+import com.helloworld.helloworld.ModBlocks;
+import com.helloworld.helloworld.ModItems;
+
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -15,6 +18,8 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
+    	ModBlocks.initModels();
+        ModItems.initModels();
     }
 }
 
