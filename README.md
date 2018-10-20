@@ -25,5 +25,7 @@ version 1.0 todo list for my mod
 
 [ ] - add a dimension
 
+[ ] - add an item pipe that connects to hoppers
+
 
 
