@@ -19,12 +19,15 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.io.File;
 
 
+//in many cases you can use CommonProxy for the server side since most things you want to init on the server you have to init client side as well 
+
 @Mod.EventBusSubscriber
 public class CommonProxy {
 
-    // Config instance
+    //config instance
     public static Configuration config;
 
+    //create config on pre load
     public void preInit(FMLPreInitializationEvent e) {
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "helloworld.cfg"));
@@ -35,21 +38,26 @@ public class CommonProxy {
     public void init(FMLInitializationEvent e) {
     }
 
+    //check if the config is changed and save current on post init
     public void postInit(FMLPostInitializationEvent e) {
         if (config.hasChanged()) {
             config.save();
         }
     }
     
+    //register blocks
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new FirstBlock());
     }
 
+    //register items first then register items for blocks
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+    	//items
     	event.getRegistry().register(new FirstItem());
     	
+    	//blocks as items
     	event.getRegistry().register(new ItemBlock(ModBlocks.firstBlock).setRegistryName(ModBlocks.firstBlock.getRegistryName()));
     }
 

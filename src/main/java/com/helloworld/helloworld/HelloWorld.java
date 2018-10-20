@@ -24,6 +24,7 @@ public class HelloWorld {
 
     public static Logger logger;
 
+    //below sets up your mod in 3 stages then triggers each even from common proxy
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
