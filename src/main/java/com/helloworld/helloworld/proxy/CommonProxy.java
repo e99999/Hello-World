@@ -1,8 +1,11 @@
 package com.helloworld.helloworld.proxy;
 
 import com.helloworld.helloworld.Config;
+import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.blocks.FirstBlock;
+import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
+import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.FirstItem;
 
 import net.minecraft.block.Block;
@@ -15,6 +18,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.io.File;
 
@@ -36,6 +41,7 @@ public class CommonProxy {
 
 
     public void init(FMLInitializationEvent e) {
+    	NetworkRegistry.INSTANCE.registerGuiHandler(HelloWorld.instance, new GuiProxy());
     }
 
     //check if the config is changed and save current on post init
@@ -46,9 +52,13 @@ public class CommonProxy {
     }
     
     //register blocks
-    @SubscribeEvent
+    
+	@SuppressWarnings("deprecation")
+	@SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new FirstBlock());
+        event.getRegistry().register(new TestContainerBlock());
+        GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");	
     }
 
     //register items first then register items for blocks
@@ -59,6 +69,7 @@ public class CommonProxy {
     	
     	//blocks as items
     	event.getRegistry().register(new ItemBlock(ModBlocks.firstBlock).setRegistryName(ModBlocks.firstBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));;
     }
 
     
