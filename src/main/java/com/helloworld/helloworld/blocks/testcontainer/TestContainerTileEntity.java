@@ -10,7 +10,7 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TestContainerTileEntity extends TileEntity {
 
-    public static final int SIZE = 9;
+    public static final int SIZE = 27;
 
     // This item handler will hold our nine inventory slots
     private ItemStackHandler itemStackHandler = new ItemStackHandler(SIZE) {
