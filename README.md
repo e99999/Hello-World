@@ -15,7 +15,7 @@ version 1.0 todo list for my mod
 
 [ ] - add a tool
 
-[ ] - add an ore
+[x] - add an ore
 
 [ ] - add a storage tile entity
 
