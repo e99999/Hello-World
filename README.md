@@ -17,7 +17,7 @@ version 1.0 todo list for my mod
 
 [x] - add an ore
 
-[ ] - add a storage tile entity
+[x] - add a storage tile entity
 
 [ ] - add a redstone tile entity
 
