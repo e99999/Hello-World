@@ -4,6 +4,8 @@ import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.blocks.FirstBlock;
+import com.helloworld.helloworld.blocks.GoldGravelBlock;
+import com.helloworld.helloworld.blocks.MagnetiteSandBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.FirstItem;
@@ -52,13 +54,14 @@ public class CommonProxy {
     }
     
     //register blocks
-    
-	@SuppressWarnings("deprecation")
+    @SuppressWarnings("deprecation")
 	@SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new FirstBlock());
         event.getRegistry().register(new TestContainerBlock());
-        GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");	
+        GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");
+        event.getRegistry().register(new MagnetiteSandBlock());
+        event.getRegistry().register(new GoldGravelBlock());
     }
 
     //register items first then register items for blocks
@@ -69,7 +72,9 @@ public class CommonProxy {
     	
     	//blocks as items
     	event.getRegistry().register(new ItemBlock(ModBlocks.firstBlock).setRegistryName(ModBlocks.firstBlock.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));;
+    	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.magnetiteSandBlock).setRegistryName(ModBlocks.magnetiteSandBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.goldGravelBlock).setRegistryName(ModBlocks.goldGravelBlock.getRegistryName()));
     }
 
     

@@ -24,6 +24,7 @@ public class FirstBlock extends Block {
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHardness(5.0F);
         setResistance(10.0F);
+        setHarvestLevel("pickaxe", 2);
     }
     
     //initializes the block texture as an item texture
