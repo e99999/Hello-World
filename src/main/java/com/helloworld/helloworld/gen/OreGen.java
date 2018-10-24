@@ -50,7 +50,7 @@ public class OreGen implements IWorldGenerator {
 		//Ore gen for the end
 		case 1:
 			//runGenerator(Blocks.BRICK_BLOCK.getDefaultState(), 7, 10, 0, 255, BlockMatcher.forBlock(Blocks.END_STONE), world, random, chunkX, chunkZ);
-			//infused redstone
+			//iridium ore - iridium
 			//olivine ore - emerald
 			//sodalite ore - lapis
 			break;

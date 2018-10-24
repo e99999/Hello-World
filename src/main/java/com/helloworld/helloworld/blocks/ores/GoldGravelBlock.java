@@ -2,7 +2,7 @@ package com.helloworld.helloworld.blocks.ores;
 
 import com.helloworld.helloworld.HelloWorld;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -12,10 +12,10 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class GoldGravelBlock extends Block {
+public class GoldGravelBlock extends BlockFalling {
 	
 	public GoldGravelBlock() {
-        super(Material.SAND);
+        super(Material.GROUND);
         setUnlocalizedName(HelloWorld.MODID + ".goldgravelblock");
         setRegistryName("goldgravelblock");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
