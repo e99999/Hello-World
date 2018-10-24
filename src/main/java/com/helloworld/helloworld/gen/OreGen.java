@@ -35,15 +35,24 @@ public class OreGen implements IWorldGenerator {
 		//Ore gen for the nether
 		case -1:
 			//runGenerator(ModBlocks.magnetiteSandBlock.getDefaultState(), 7, 10, 10, 90, BlockMatcher.forBlock(Blocks.NETHERRACK), world, random, chunkX, chunkZ);
+			//diamond ore - diamonds
+			//pyrite ore - iron
+			//cinnabar ore - redstone
 			break;
 		//Ore gen for the overworld
 		case 0:
-			runGenerator(ModBlocks.magnetiteSandBlock.getDefaultState(), 32, 6, 48, 63, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			runGenerator(ModBlocks.goldGravelBlock.getDefaultState(), 8, 36, 32, 62, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
+			runGenerator(ModBlocks.redgraniteStoneBlock.getDefaultState(), 32, 4, 0, 120, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+			runGenerator(ModBlocks.blackgraniteStoneBlock.getDefaultState(), 32, 4, 0, 120, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+			runGenerator(ModBlocks.magnetiteSandBlock.getDefaultState(), 32, 2, 48, 63, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
+			runGenerator(ModBlocks.goldGravelBlock.getDefaultState(), 8, 16, 32, 62, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
+			// add one more thing
 			break;
 		//Ore gen for the end
 		case 1:
 			//runGenerator(Blocks.BRICK_BLOCK.getDefaultState(), 7, 10, 0, 255, BlockMatcher.forBlock(Blocks.END_STONE), world, random, chunkX, chunkZ);
+			//infused redstone
+			//olivine ore - emerald
+			//sodalite ore - lapis
 			break;
 		}
 	}

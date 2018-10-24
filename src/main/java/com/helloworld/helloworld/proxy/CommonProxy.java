@@ -4,8 +4,12 @@ import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.blocks.FirstBlock;
-import com.helloworld.helloworld.blocks.GoldGravelBlock;
-import com.helloworld.helloworld.blocks.MagnetiteSandBlock;
+import com.helloworld.helloworld.blocks.ores.GoldGravelBlock;
+import com.helloworld.helloworld.blocks.ores.MagnetiteSandBlock;
+import com.helloworld.helloworld.blocks.stones.BlackGraniteSmoothBlock;
+import com.helloworld.helloworld.blocks.stones.BlackGraniteStoneBlock;
+import com.helloworld.helloworld.blocks.stones.RedGraniteSmoothBlock;
+import com.helloworld.helloworld.blocks.stones.RedGraniteStoneBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.FirstItem;
@@ -57,24 +61,40 @@ public class CommonProxy {
     @SuppressWarnings("deprecation")
 	@SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        event.getRegistry().register(new FirstBlock());
+        
+    	//blocks
+    	event.getRegistry().register(new FirstBlock());
         event.getRegistry().register(new TestContainerBlock());
         GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");
+        
+        //overworld ore blocks
         event.getRegistry().register(new MagnetiteSandBlock());
         event.getRegistry().register(new GoldGravelBlock());
+        event.getRegistry().register(new RedGraniteStoneBlock());
+        event.getRegistry().register(new RedGraniteSmoothBlock());
+        event.getRegistry().register(new BlackGraniteStoneBlock());
+        event.getRegistry().register(new BlackGraniteSmoothBlock());
+        
     }
 
     //register items first then register items for blocks
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+    	
     	//items
     	event.getRegistry().register(new FirstItem());
     	
     	//blocks as items
     	event.getRegistry().register(new ItemBlock(ModBlocks.firstBlock).setRegistryName(ModBlocks.firstBlock.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));
+    	
+    	//overworld ore blocks as items
     	event.getRegistry().register(new ItemBlock(ModBlocks.magnetiteSandBlock).setRegistryName(ModBlocks.magnetiteSandBlock.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.goldGravelBlock).setRegistryName(ModBlocks.goldGravelBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.redgraniteStoneBlock).setRegistryName(ModBlocks.redgraniteStoneBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.redgraniteSmoothBlock).setRegistryName(ModBlocks.redgraniteSmoothBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.blackgraniteStoneBlock).setRegistryName(ModBlocks.blackgraniteStoneBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.blackgraniteSmoothBlock).setRegistryName(ModBlocks.blackgraniteSmoothBlock.getRegistryName()));
     }
 
     

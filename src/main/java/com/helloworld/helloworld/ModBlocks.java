@@ -1,8 +1,12 @@
 package com.helloworld.helloworld;
 
 import com.helloworld.helloworld.blocks.FirstBlock;
-import com.helloworld.helloworld.blocks.GoldGravelBlock;
-import com.helloworld.helloworld.blocks.MagnetiteSandBlock;
+import com.helloworld.helloworld.blocks.ores.GoldGravelBlock;
+import com.helloworld.helloworld.blocks.ores.MagnetiteSandBlock;
+import com.helloworld.helloworld.blocks.stones.BlackGraniteSmoothBlock;
+import com.helloworld.helloworld.blocks.stones.BlackGraniteStoneBlock;
+import com.helloworld.helloworld.blocks.stones.RedGraniteSmoothBlock;
+import com.helloworld.helloworld.blocks.stones.RedGraniteStoneBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -24,6 +28,18 @@ public class ModBlocks {
 	@GameRegistry.ObjectHolder("helloworld:goldgravelblock")
     public static GoldGravelBlock goldGravelBlock;
 	
+	@GameRegistry.ObjectHolder("helloworld:redgranitestoneblock")
+    public static RedGraniteStoneBlock redgraniteStoneBlock;
+	
+	@GameRegistry.ObjectHolder("helloworld:redgranitesmoothblock")
+    public static RedGraniteSmoothBlock redgraniteSmoothBlock;
+	
+	@GameRegistry.ObjectHolder("helloworld:blackgranitestoneblock")
+    public static BlackGraniteStoneBlock blackgraniteStoneBlock;
+	
+	@GameRegistry.ObjectHolder("helloworld:blackgranitesmoothblock")
+    public static BlackGraniteSmoothBlock blackgraniteSmoothBlock;
+	
 	
     
     //inits block models all blocks should be listed
@@ -33,5 +49,9 @@ public class ModBlocks {
     	testContainerBlock.initModel();
     	magnetiteSandBlock.initModel();
     	goldGravelBlock.initModel();
+    	redgraniteStoneBlock.initModel();
+    	redgraniteSmoothBlock.initModel();
+    	blackgraniteStoneBlock.initModel();
+    	blackgraniteSmoothBlock.initModel();
         }
 }
