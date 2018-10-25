@@ -21,6 +21,7 @@ import com.helloworld.helloworld.blocks.ores.RedstoneSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.DogeCoin;
+import com.helloworld.helloworld.items.IronMultiTool;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -105,6 +106,7 @@ public class CommonProxy {
     	
     	//items
     	event.getRegistry().register(new DogeCoin());
+    	event.getRegistry().register(new IronMultiTool());
     	
     	//blocks as items
     	event.getRegistry().register(new ItemBlock(ModBlocks.hazardBlock).setRegistryName(ModBlocks.hazardBlock.getRegistryName()));
