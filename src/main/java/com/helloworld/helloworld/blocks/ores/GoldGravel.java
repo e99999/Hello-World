@@ -21,6 +21,7 @@ public class GoldGravel extends BlockFalling {
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHardness(0.6F);
         setSoundType(SoundType.GROUND);
+        setHarvestLevel("shovel", 0);
     }
 	
 	//initializes the block texture as an item texture

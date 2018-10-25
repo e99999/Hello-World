@@ -14,13 +14,13 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class FirstBlock extends Block {
+public class HazardBlock extends Block {
 
     //basic information about this block
-	public FirstBlock() {
+	public HazardBlock() {
         super(Material.ROCK);
-        setUnlocalizedName(HelloWorld.MODID + ".firstblock");
-        setRegistryName("firstblock");
+        setUnlocalizedName(HelloWorld.MODID + ".hazardblock");
+        setRegistryName("hazardblock");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHardness(5.0F);
         setResistance(60.0F);

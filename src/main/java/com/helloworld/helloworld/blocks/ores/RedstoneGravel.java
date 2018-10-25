@@ -13,7 +13,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -21,19 +20,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RedstoneGravel extends BlockFalling {
 	
 	public RedstoneGravel() {
-		super(Material.SAND);
-		setUnlocalizedName(HelloWorld.MODID + ".redstonegravel");
+		super(Material.GROUND);
+        setUnlocalizedName(HelloWorld.MODID + ".redstonegravel");
         setRegistryName("redstonegravel");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-        setHardness(0.5F);
-        setSoundType(SoundType.SAND);
+        setHardness(0.6F);
+        setSoundType(SoundType.GROUND);
         setHarvestLevel("shovel", 0);
     }
 	
 	/**
      * Get the Item that this Block should drop when harvested.
      */
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
         return Items.REDSTONE;
     }
@@ -41,7 +41,8 @@ public class RedstoneGravel extends BlockFalling {
     /**
      * Get the quantity dropped based on the given fortune level
      */
-    public int quantityDroppedWithBonus(int fortune, Random random)
+	@Override
+	public int quantityDroppedWithBonus(int fortune, Random random)
     {
         return this.quantityDropped(random) + random.nextInt(fortune + 1);
     }
@@ -49,17 +50,10 @@ public class RedstoneGravel extends BlockFalling {
     /**
      * Returns the quantity of items to drop on block destruction.
      */
-    public int quantityDropped(Random random)
+	@Override
+	public int quantityDropped(Random random)
     {
         return 1 + random.nextInt(2);
-    }
-
-    /**
-     * Spawns this Block's drops into the World as EntityItems.
-     */
-    public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
-    {
-        super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
     }
 
     @Override

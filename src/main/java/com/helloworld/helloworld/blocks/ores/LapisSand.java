@@ -11,18 +11,19 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class RedstoneSand extends BlockFalling {
+public class LapisSand extends BlockFalling {
 	
-	public RedstoneSand() {
+	public LapisSand() {
 		super(Material.SAND);
-		setUnlocalizedName(HelloWorld.MODID + ".redstonesand");
-        setRegistryName("redstonesand");
+		setUnlocalizedName(HelloWorld.MODID + ".lapissand");
+        setRegistryName("lapissand");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHardness(0.5F);
         setSoundType(SoundType.SAND);
@@ -36,7 +37,7 @@ public class RedstoneSand extends BlockFalling {
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Items.REDSTONE;
+        return Items.DYE;
     }
 
     /**
@@ -54,7 +55,7 @@ public class RedstoneSand extends BlockFalling {
 	@Override
 	public int quantityDropped(Random random)
     {
-        return 1 + random.nextInt(2);
+        return 1 + random.nextInt(1);
     }
 
     @Override
@@ -62,9 +63,15 @@ public class RedstoneSand extends BlockFalling {
     {
         if (this.getItemDropped(state, RANDOM, fortune) != Item.getItemFromBlock(this))
         {
-            return 1 + RANDOM.nextInt(5);
+            return 1 + RANDOM.nextInt(2);
         }
         return 0;
+    }
+    
+    @Override
+    public int damageDropped(IBlockState state)
+    {
+        return EnumDyeColor.BLUE.getDyeDamage();
     }
 	
     //initializes the block texture as an item texture
@@ -75,3 +82,4 @@ public class RedstoneSand extends BlockFalling {
     }
 
 }
+

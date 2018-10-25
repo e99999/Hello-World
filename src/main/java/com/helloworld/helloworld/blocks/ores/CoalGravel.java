@@ -32,14 +32,16 @@ public class CoalGravel extends BlockFalling {
 	/**
      * Get the Item that this Block should drop when harvested.
      */
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
     	return Items.COAL;
     }
     
     /**
      * Get the quantity dropped based on the given fortune level
      */
-    public int quantityDroppedWithBonus(int fortune, Random random)
+	@Override
+	public int quantityDroppedWithBonus(int fortune, Random random)
     {
         return this.quantityDropped(random) + random.nextInt(fortune + 1);
     }
@@ -47,7 +49,8 @@ public class CoalGravel extends BlockFalling {
     /**
      * Returns the quantity of items to drop on block destruction.
      */
-    public int quantityDropped(Random random)
+	@Override
+	public int quantityDropped(Random random)
     {
         return 1;
     }
