@@ -12,15 +12,16 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlackSand extends BlockFalling {
+public class IronSand extends BlockFalling {
 	
-	public BlackSand() {
+	public IronSand() {
 		super(Material.SAND);
-		setUnlocalizedName(HelloWorld.MODID + ".blacksand");
-        setRegistryName("blacksand");
+		setUnlocalizedName(HelloWorld.MODID + ".ironsand");
+        setRegistryName("ironsand");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHardness(0.5F);
         setSoundType(SoundType.SAND);
+        setHarvestLevel("shovel", 0);
     }
 	
 	//initializes the block texture as an item texture
