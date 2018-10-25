@@ -13,7 +13,7 @@ version 1.0 todo list for my mod
 
 [ ] - add a plant
 
-[ ] - add a tool
+[x] - add a tool
 
 [x] - add an ore
 
