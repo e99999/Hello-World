@@ -1,8 +1,9 @@
-package com.helloworld.helloworld.blocks.stones;
+package com.helloworld.helloworld.blocks.ores;
 
 import com.helloworld.helloworld.HelloWorld;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockFalling;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,23 +12,22 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class RedGraniteStoneBlock extends Block {
-
-    //basic information about this block
-	public RedGraniteStoneBlock() {
-        super(Material.ROCK);
-        setUnlocalizedName(HelloWorld.MODID + ".redgranitestoneblock");
-        setRegistryName("redgranitestoneblock");
+public class BlackSand extends BlockFalling {
+	
+	public BlackSand() {
+		super(Material.SAND);
+		setUnlocalizedName(HelloWorld.MODID + ".blacksand");
+        setRegistryName("blacksand");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-        setHardness(3.0F);
-        setResistance(60.0F);
-        setHarvestLevel("pickaxe", 2);
+        setHardness(0.5F);
+        setSoundType(SoundType.SAND);
     }
-    
-    //initializes the block texture as an item texture
-    @SideOnly(Side.CLIENT)
+	
+	//initializes the block texture as an item texture
+	@SideOnly(Side.CLIENT)
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    
+        
     }
+
 }

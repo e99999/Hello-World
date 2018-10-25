@@ -4,12 +4,8 @@ import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.blocks.FirstBlock;
-import com.helloworld.helloworld.blocks.ores.GoldGravelBlock;
-import com.helloworld.helloworld.blocks.ores.MagnetiteSandBlock;
-import com.helloworld.helloworld.blocks.stones.BlackGraniteSmoothBlock;
-import com.helloworld.helloworld.blocks.stones.BlackGraniteStoneBlock;
-import com.helloworld.helloworld.blocks.stones.RedGraniteSmoothBlock;
-import com.helloworld.helloworld.blocks.stones.RedGraniteStoneBlock;
+import com.helloworld.helloworld.blocks.ores.GoldGravel;
+import com.helloworld.helloworld.blocks.ores.BlackSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.FirstItem;
@@ -68,12 +64,8 @@ public class CommonProxy {
         GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");
         
         //overworld ore blocks
-        event.getRegistry().register(new MagnetiteSandBlock());
-        event.getRegistry().register(new GoldGravelBlock());
-        event.getRegistry().register(new RedGraniteStoneBlock());
-        event.getRegistry().register(new RedGraniteSmoothBlock());
-        event.getRegistry().register(new BlackGraniteStoneBlock());
-        event.getRegistry().register(new BlackGraniteSmoothBlock());
+        event.getRegistry().register(new BlackSand());
+        event.getRegistry().register(new GoldGravel());
         
     }
 
@@ -89,12 +81,8 @@ public class CommonProxy {
     	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));
     	
     	//overworld ore blocks as items
-    	event.getRegistry().register(new ItemBlock(ModBlocks.magnetiteSandBlock).setRegistryName(ModBlocks.magnetiteSandBlock.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.goldGravelBlock).setRegistryName(ModBlocks.goldGravelBlock.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.redgraniteStoneBlock).setRegistryName(ModBlocks.redgraniteStoneBlock.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.redgraniteSmoothBlock).setRegistryName(ModBlocks.redgraniteSmoothBlock.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.blackgraniteStoneBlock).setRegistryName(ModBlocks.blackgraniteStoneBlock.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.blackgraniteSmoothBlock).setRegistryName(ModBlocks.blackgraniteSmoothBlock.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.blackSand).setRegistryName(ModBlocks.blackSand.getRegistryName()));
+    	event.getRegistry().register(new ItemBlock(ModBlocks.goldGravel).setRegistryName(ModBlocks.goldGravel.getRegistryName()));
     }
 
     
