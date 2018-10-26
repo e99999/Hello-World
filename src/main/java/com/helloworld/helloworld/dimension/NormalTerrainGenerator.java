@@ -167,7 +167,7 @@ public class NormalTerrainGenerator {
     public void generate(int chunkX, int chunkZ, ChunkPrimer primer) {
         generateHeightmap(chunkX * 4, 0, chunkZ * 4);
 
-        byte waterLevel = 63;
+        byte waterLevel = 73;
         for (int x4 = 0; x4 < 4; ++x4) {
             int l = x4 * 5;
             int i1 = (x4 + 1) * 5;
@@ -207,6 +207,9 @@ public class NormalTerrainGenerator {
                                     primer.setBlockState(x4 * 4 + x, height32 * 8 + h, z4 * 4 + z, Blocks.BEDROCK.getDefaultState());
                                 } else if ((d15 += d16) > 0.0D) {
                                     primer.setBlockState(x4 * 4 + x, height32 * 8 + h, z4 * 4 + z, Blocks.STONE.getDefaultState());
+                                } else if (height < waterLevel) {
+                                	primer.setBlockState(x4 * 4 + x, height32 * 8 + h, z4 * 4 + z, Blocks.WATER.getDefaultState());
+                                	
                                 }
                             }
 
