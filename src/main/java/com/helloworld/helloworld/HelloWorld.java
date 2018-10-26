@@ -6,11 +6,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import org.apache.logging.log4j.Logger;
 
 import com.helloworld.helloworld.commands.TeleportCommand;
+import com.helloworld.helloworld.dimension.TestBiome;
 import com.helloworld.helloworld.gen.OreGen;
 import com.helloworld.helloworld.proxy.CommonProxy;
 
@@ -41,6 +43,7 @@ public class HelloWorld {
     	//registers the oregen file
     	GameRegistry.registerWorldGenerator(new OreGen(), 0);
     	proxy.init(e);
+    	ForgeRegistries.BIOMES.register(TestBiome.biome);
     }
 
     @Mod.EventHandler

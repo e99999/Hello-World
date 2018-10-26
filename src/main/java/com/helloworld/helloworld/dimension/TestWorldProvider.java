@@ -27,6 +27,11 @@ public class TestWorldProvider extends WorldProvider {
     }
     
     @Override
+	public void init() {
+		this.biomeProvider = new BiomeProviderCustom(this.world.getSeed());
+	}
+
+    @Override
 	@SideOnly(Side.CLIENT)
 	public Vec3d getFogColor(float par1, float par2) {
 		return new Vec3d(0.01568627450980392D, 0.09019607843137255D, 0.0D);
@@ -61,6 +66,15 @@ public class TestWorldProvider extends WorldProvider {
 	@SideOnly(Side.CLIENT)
 	public boolean doesXZShowFog(int par1, int par2) {
 		return true;
+	}
+	
+	@Override
+	protected void generateLightBrightnessTable() {
+		float f = 0.5F;
+		for (int i = 0; i <= 7; ++i) {
+			float f1 = 1.0F - (float) i / 15.0F;
+			this.lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * (1.0F - f) + f;
+		}
 	}
 
 	
