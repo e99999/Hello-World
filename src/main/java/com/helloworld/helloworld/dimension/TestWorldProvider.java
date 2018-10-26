@@ -66,7 +66,13 @@ public class TestWorldProvider extends WorldProvider {
 	public float getStarBrightness(float par1) {
 		return (par1*5F);
 	}
-
+	
+	@Override
+    public boolean canDoLightning(net.minecraft.world.chunk.Chunk chunk)
+    {
+        return true;
+    }
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean doesXZShowFog(int par1, int par2) {

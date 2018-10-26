@@ -27,7 +27,7 @@ public class TestChunkGenerator implements IChunkGenerator {
     private Random random;
     private Biome[] biomesForGeneration;
 
-    private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityPigZombie.class, 40, 1, 5));
+    private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityPigZombie.class, 75, 4, 16));
 
     private MapGenBase caveGenerator = new MapGenCaves();
     private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();

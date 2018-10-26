@@ -10,6 +10,8 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityPigZombie;
 
 public class TestBiome {
@@ -58,7 +60,12 @@ public class TestBiome {
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();
 			this.spawnableCaveCreatureList.clear();
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityPigZombie.class, 40, 1, 5));
+			
+			//Mobs
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityBlaze.class, 100, 2, 6));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityPigZombie.class, 75, 4, 16));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityIronGolem.class, 20, 1, 2));
+			
 		}
 
 		@SideOnly(Side.CLIENT)
