@@ -3,6 +3,7 @@ package com.helloworld.helloworld.proxy;
 import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
+import com.helloworld.helloworld.ModDimensions;
 import com.helloworld.helloworld.blocks.HazardBlock;
 import com.helloworld.helloworld.blocks.ores.CoalGravel;
 import com.helloworld.helloworld.blocks.ores.CoalSand;
@@ -52,6 +53,7 @@ public class CommonProxy {
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "helloworld.cfg"));
         Config.readConfig();
+        ModDimensions.init();
     }
 
 

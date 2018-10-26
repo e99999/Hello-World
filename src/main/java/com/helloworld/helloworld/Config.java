@@ -14,6 +14,7 @@ public class Config {
     // This values below you can access elsewhere in your mod:
     public static boolean isThisAGoodTutorial = true;
     public static String yourRealName = "Steve";
+    public static int dimensionId = 100;
 
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.
@@ -42,6 +43,7 @@ public class Config {
 
     private static void initDimensionConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_DIMENSIONS, "Dimension configuration");
+        dimensionId = cfg.getInt("dimensionId", CATEGORY_DIMENSIONS, dimensionId, -1000, 1000, "The Id to use for the dimension");
 
     }
 }
