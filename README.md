@@ -21,7 +21,7 @@ version 1.0 todo list for my mod
 
 [ ] - add a redstone tile entity
 
-[ ] - add a biome
+[x] - add a biome
 
 [ ] - add a dimension
 
