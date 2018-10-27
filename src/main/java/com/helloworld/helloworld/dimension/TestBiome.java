@@ -54,8 +54,8 @@ public class TestBiome {
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
-			decorator.sandPatchesPerChunk = 1;
-			decorator.gravelPatchesPerChunk = 1;
+			decorator.sandPatchesPerChunk = 0;
+			decorator.gravelPatchesPerChunk = 0;
 			this.spawnableMonsterList.clear();
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();
@@ -71,13 +71,13 @@ public class TestBiome {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public int getGrassColorAtPos(BlockPos pos) {
-			return -6697984;
+			return -6684826;
 		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
 		public int getFoliageColorAtPos(BlockPos pos) {
-			return -6697984;
+			return -6684826;
 		}
 
 		@SideOnly(Side.CLIENT)
