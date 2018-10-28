@@ -25,6 +25,8 @@ version 1.0 todo list for my mod
 
 [x] - add a dimension
 
+[ ] - add a fluid
+
 [ ] - add a mob
 
 [ ] - add an item pipe that connects to hoppers
