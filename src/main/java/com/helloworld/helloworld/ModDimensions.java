@@ -1,6 +1,6 @@
 package com.helloworld.helloworld;
 
-import com.helloworld.helloworld.toxicdimension.TestWorldProvider;
+import com.helloworld.helloworld.toxicdimension.ToxicWorldProvider;
 
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
@@ -15,7 +15,7 @@ public class ModDimensions {
     }
 
     private static void registerDimensionTypes() {
-        testDimensionType = DimensionType.register(HelloWorld.MODID, "_test", Config.dimensionId, TestWorldProvider.class, false);
+        testDimensionType = DimensionType.register(HelloWorld.MODID, "_test", Config.dimensionId, ToxicWorldProvider.class, false);
     }
 
     private static void registerDimensions() {

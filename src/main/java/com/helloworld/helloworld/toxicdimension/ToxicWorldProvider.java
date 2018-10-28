@@ -9,7 +9,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TestWorldProvider extends WorldProvider {
+public class ToxicWorldProvider extends WorldProvider {
 	
 	@Override
 	public boolean hasSkyLight() {
@@ -28,7 +28,7 @@ public class TestWorldProvider extends WorldProvider {
 
     @Override
     public IChunkGenerator createChunkGenerator() {
-        return new TestChunkGenerator(world);
+        return new ToxicChunkGenerator(world);
     }
     
     @Override

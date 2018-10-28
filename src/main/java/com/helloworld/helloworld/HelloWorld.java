@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 import com.helloworld.helloworld.commands.TeleportCommand;
 import com.helloworld.helloworld.gen.OreGen;
 import com.helloworld.helloworld.proxy.CommonProxy;
-import com.helloworld.helloworld.toxicdimension.TestBiome;
+import com.helloworld.helloworld.toxicdimension.ToxicBiome;
 
 @Mod(modid = HelloWorld.MODID, name = HelloWorld.MODNAME, version = HelloWorld.MODVERSION, useMetadata = true)
 public class HelloWorld {
@@ -43,7 +43,7 @@ public class HelloWorld {
     	//registers the oregen file
     	GameRegistry.registerWorldGenerator(new OreGen(), 0);
     	proxy.init(e);
-    	ForgeRegistries.BIOMES.register(TestBiome.biome);
+    	ForgeRegistries.BIOMES.register(ToxicBiome.biome);
     }
 
     @Mod.EventHandler

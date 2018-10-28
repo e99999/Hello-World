@@ -6,7 +6,7 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerBiomesCustom extends GenLayer {
 
-	private Biome[] allowedBiomes = {TestBiome.biome,};
+	private Biome[] allowedBiomes = {ToxicBiome.biome,};
 
 	public GenLayerBiomesCustom(long seed) {
 		super(seed);

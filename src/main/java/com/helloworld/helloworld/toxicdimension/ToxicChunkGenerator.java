@@ -19,16 +19,16 @@ import java.util.Random;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 
-public class TestChunkGenerator implements IChunkGenerator {
+public class ToxicChunkGenerator implements IChunkGenerator {
 
     private final World worldObj;
     private Random random;
     private Biome[] biomesForGeneration;
 
     private MapGenBase caveGenerator = new MapGenCaves();
-    private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();
+    private ToxicTerrainGenerator terraingen = new ToxicTerrainGenerator();
 
-    public TestChunkGenerator(World worldObj) {
+    public ToxicChunkGenerator(World worldObj) {
         this.worldObj = worldObj;
         long seed = worldObj.getSeed();
         this.random = new Random((seed + 516) * 314);

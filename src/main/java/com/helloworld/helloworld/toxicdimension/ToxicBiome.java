@@ -12,7 +12,7 @@ import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityPigZombie;
 
-public class TestBiome {
+public class ToxicBiome {
 
 	public static BiomeGenCustom biome;
 	public static Object instance;
@@ -75,7 +75,7 @@ public class TestBiome {
 		
 		@Override
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-			return new CustomTree();
+			return new ToxicTree();
 		}
 	}
 }

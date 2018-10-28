@@ -9,9 +9,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-public class CustomTree extends WorldGenAbstractTree {
+public class ToxicTree extends WorldGenAbstractTree {
 
-	public CustomTree() {
+	public ToxicTree() {
 		super(false);
 	}
 

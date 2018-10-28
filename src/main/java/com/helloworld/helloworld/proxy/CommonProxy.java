@@ -12,7 +12,7 @@ import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.AlkCoin;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
-import com.helloworld.helloworld.toxicdimension.BlockCustomPortal;
+import com.helloworld.helloworld.toxicdimension.ToxicPortalBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -37,9 +37,9 @@ import java.io.File;
 public class CommonProxy {
 	
 	//TODO refactor portal stuff like other blocks
-	public static BlockCustomPortal portal;
+	public static ToxicPortalBlock portal;
 	static {
-		portal = (BlockCustomPortal) (new BlockCustomPortal().setUnlocalizedName("testdimension_portal"));}
+		portal = (ToxicPortalBlock) (new ToxicPortalBlock().setUnlocalizedName("testdimension_portal"));}
 
     //config instance
     public static Configuration config;

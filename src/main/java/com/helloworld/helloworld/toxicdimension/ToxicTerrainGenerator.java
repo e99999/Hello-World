@@ -11,7 +11,7 @@ import net.minecraft.world.gen.NoiseGeneratorPerlin;
 
 import java.util.Random;
 
-public class NormalTerrainGenerator {
+public class ToxicTerrainGenerator {
     private World world;
     private Random random;
 
@@ -34,7 +34,7 @@ public class NormalTerrainGenerator {
 
     private Biome[] biomesForGeneration;
 
-    public NormalTerrainGenerator() {
+    public ToxicTerrainGenerator() {
         this.heightMap = new double[825];
 
         this.biomeWeights = new float[25];

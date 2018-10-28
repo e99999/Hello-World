@@ -29,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCustomPortal extends BlockPortal {
+public class ToxicPortalBlock extends BlockPortal {
 
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
@@ -37,12 +37,12 @@ public class BlockCustomPortal extends BlockPortal {
 
 	@Override
 	public boolean trySpawnPortal(World worldIn, BlockPos pos) {
-		BlockCustomPortal.Size blockportalsize = new BlockCustomPortal.Size(worldIn, pos, EnumFacing.Axis.X);
+		ToxicPortalBlock.Size blockportalsize = new ToxicPortalBlock.Size(worldIn, pos, EnumFacing.Axis.X);
 		if (blockportalsize.isValid() && blockportalsize.portalBlockCount == 0) {
 			blockportalsize.placePortalBlocks();
 			return true;
 		} else {
-			BlockCustomPortal.Size blockportalsize1 = new BlockCustomPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
+			ToxicPortalBlock.Size blockportalsize1 = new ToxicPortalBlock.Size(worldIn, pos, EnumFacing.Axis.Z);
 			if (blockportalsize1.isValid() && blockportalsize1.portalBlockCount == 0) {
 				blockportalsize1.placePortalBlocks();
 				return true;
@@ -57,13 +57,13 @@ public class BlockCustomPortal extends BlockPortal {
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 		EnumFacing.Axis enumfacingaxis = (EnumFacing.Axis) state.getValue(AXIS);
 		if (enumfacingaxis == EnumFacing.Axis.X) {
-			BlockCustomPortal.Size blockportalsize = new BlockCustomPortal.Size(worldIn, pos, EnumFacing.Axis.X);
+			ToxicPortalBlock.Size blockportalsize = new ToxicPortalBlock.Size(worldIn, pos, EnumFacing.Axis.X);
 			if (!blockportalsize.isValid() || blockportalsize.portalBlockCount < blockportalsize.width * blockportalsize.height) {
 				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
 				portalDestroyed(worldIn, pos);
 			}
 		} else if (enumfacingaxis == EnumFacing.Axis.Z) {
-			BlockCustomPortal.Size blockportalsize1 = new BlockCustomPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
+			ToxicPortalBlock.Size blockportalsize1 = new ToxicPortalBlock.Size(worldIn, pos, EnumFacing.Axis.Z);
 			if (!blockportalsize1.isValid() || blockportalsize1.portalBlockCount < blockportalsize1.width * blockportalsize1.height) {
 				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
 				portalDestroyed(worldIn, pos);
@@ -99,11 +99,11 @@ public class BlockCustomPortal extends BlockPortal {
 	@Override
 	public BlockPattern.PatternHelper createPatternHelper(World worldIn, BlockPos pos) {
 		EnumFacing.Axis enumfacingaxis = EnumFacing.Axis.Z;
-		BlockCustomPortal.Size blockportalsize = new BlockCustomPortal.Size(worldIn, pos, EnumFacing.Axis.X);
+		ToxicPortalBlock.Size blockportalsize = new ToxicPortalBlock.Size(worldIn, pos, EnumFacing.Axis.X);
 		LoadingCache<BlockPos, BlockWorldState> loadingcache = BlockPattern.createLoadingCache(worldIn, true);
 		if (!blockportalsize.isValid()) {
 			enumfacingaxis = EnumFacing.Axis.X;
-			blockportalsize = new BlockCustomPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
+			blockportalsize = new ToxicPortalBlock.Size(worldIn, pos, EnumFacing.Axis.Z);
 		}
 		if (!blockportalsize.isValid()) {
 			return new BlockPattern.PatternHelper(pos, EnumFacing.NORTH, EnumFacing.UP, loadingcache, 1, 1, 1);
@@ -166,7 +166,7 @@ public class BlockCustomPortal extends BlockPortal {
 		}
 	}
 
-	private TeleporterDimensionMod getTeleporterForDimension(Entity entity, BlockPos pos, int dimid) {
+	private ToxicTeleporter getTeleporterForDimension(Entity entity, BlockPos pos, int dimid) {
 		BlockPattern.PatternHelper blockpatternpatternhelper =CommonProxy.portal.createPatternHelper(entity.world, new BlockPos(pos));
 		double d0 = blockpatternpatternhelper.getForwards().getAxis() == EnumFacing.Axis.X ? (double) blockpatternpatternhelper
 				.getFrontTopLeft().getZ() : (double) blockpatternpatternhelper.getFrontTopLeft().getX();
@@ -176,7 +176,7 @@ public class BlockCustomPortal extends BlockPortal {
 				d0, d0 - (double) blockpatternpatternhelper.getWidth()));
 		double d2 = MathHelper.pct(entity.posY - 1.0D, (double) blockpatternpatternhelper.getFrontTopLeft().getY(),
 				(double) (blockpatternpatternhelper.getFrontTopLeft().getY() - blockpatternpatternhelper.getHeight()));
-		return new TeleporterDimensionMod(entity.getServer().getWorld(dimid), new Vec3d(d1, d2, 0.0D), blockpatternpatternhelper.getForwards());
+		return new ToxicTeleporter(entity.getServer().getWorld(dimid), new Vec3d(d1, d2, 0.0D), blockpatternpatternhelper.getForwards());
 	}
 
 	public static class Size {
