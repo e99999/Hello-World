@@ -96,5 +96,6 @@ public class ModBlocks {
     	
     	redstoneGravel.initModel();
     	redstoneSand.initModel();
+    	
         }
 }

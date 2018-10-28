@@ -21,6 +21,7 @@ import com.helloworld.helloworld.blocks.ores.RedstoneGravel;
 import com.helloworld.helloworld.blocks.ores.RedstoneSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
+import com.helloworld.helloworld.dimension.BlockCustomPortal;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
 
@@ -35,6 +36,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.io.File;
@@ -44,6 +46,10 @@ import java.io.File;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
+	
+	public static BlockCustomPortal portal;
+	static {
+		portal = (BlockCustomPortal) (new BlockCustomPortal().setUnlocalizedName("testdimension_portal"));}
 
     //config instance
     public static Configuration config;
@@ -52,8 +58,14 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "helloworld.cfg"));
-        Config.readConfig();
+        
+        portal.setRegistryName("testdimension_portal");
+		ForgeRegistries.BLOCKS.register(portal);
+		ForgeRegistries.ITEMS.register(new ItemBlock(portal).setRegistryName(portal.getRegistryName()));
+        
+		Config.readConfig();
         ModDimensions.init();
+        
     }
 
 
