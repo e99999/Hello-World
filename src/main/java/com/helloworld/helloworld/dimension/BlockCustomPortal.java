@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.google.common.cache.LoadingCache;
 import com.helloworld.helloworld.Config;
-import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
@@ -14,12 +13,10 @@ import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
@@ -28,7 +25,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -100,7 +96,8 @@ public class BlockCustomPortal extends BlockPortal {
 				d2 = pos.getZ() + 0.5D + 0.25D * (double) j;
 				d5 = (double) (rand.nextFloat() * 2.0F * (float) j);
 			}
-			world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, d0, d1, d2, d3, d4, d5);
+			world.spawnParticle(EnumParticleTypes.FLAME, d0, d1, d2, 0, 0, 0);
+			
 		}
 	}
 

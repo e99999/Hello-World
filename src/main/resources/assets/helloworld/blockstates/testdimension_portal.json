@@ -1,11 +1,13 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "cube_all",
-    "textures": { "all": "helloworld:blocks/portal"}
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}]
+    "axis=z": {
+      "model": "helloworld:testdimension_portal_ew"
+    },
+    "axis=x": {
+      "model": "helloworld:testdimension_portal_ns"
+    },
+    "inventory": {
+      "model": "helloworld:testdimension_portal_ns"
+    }
   }
 }

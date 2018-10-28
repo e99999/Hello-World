@@ -1,7 +1,6 @@
 package com.helloworld.helloworld.items;
 
 import com.helloworld.helloworld.HelloWorld;
-import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.proxy.CommonProxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
