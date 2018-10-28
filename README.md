@@ -11,7 +11,7 @@ version 1.0 todo list for my mod
 
 [ ] - add a tree
 
-[ ] - add a plant
+[ ] - add a food
 
 [x] - add a tool
 
