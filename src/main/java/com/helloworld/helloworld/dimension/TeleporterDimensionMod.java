@@ -1,6 +1,7 @@
 package com.helloworld.helloworld.dimension;
 
 
+import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.proxy.CommonProxy;
 
 import net.minecraft.block.BlockPortal;
@@ -49,7 +50,7 @@ public class TeleporterDimensionMod extends Teleporter {
 						int k2 = k - j1;
 						boolean flag = l1 < 0;
 						this.world.setBlockState(new BlockPos(i2, j2, k2),
-								flag ? Blocks.IRON_BLOCK.getDefaultState() : Blocks.AIR.getDefaultState());
+								flag ? ModBlocks.portalFrame.getDefaultState() : Blocks.AIR.getDefaultState());
 					}
 				}
 			}
@@ -270,7 +271,7 @@ public class TeleporterDimensionMod extends Teleporter {
 						int k11 = k6 + (l7 - 1) * i3 - j7 * l6;
 						boolean flag = k8 < 0;
 						this.world.setBlockState(new BlockPos(k9, k10, k11),
-								flag ? Blocks.IRON_BLOCK.getDefaultState() : Blocks.AIR.getDefaultState());
+								flag ? ModBlocks.portalFrame.getDefaultState() : Blocks.AIR.getDefaultState());
 					}
 				}
 			}
@@ -283,7 +284,7 @@ public class TeleporterDimensionMod extends Teleporter {
 					int l11 = k2 + l9;
 					int k12 = k6 + (l8 - 1) * i3;
 					boolean flag1 = l8 == 0 || l8 == 3 || l9 == -1 || l9 == 3;
-					this.world.setBlockState(new BlockPos(l10, l11, k12), flag1 ? Blocks.IRON_BLOCK.getDefaultState() : iblockstate, 2);
+					this.world.setBlockState(new BlockPos(l10, l11, k12), flag1 ? ModBlocks.portalFrame.getDefaultState() : iblockstate, 2);
 				}
 			}
 			for (int i9 = 0; i9 < 4; ++i9) {

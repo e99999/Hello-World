@@ -1,6 +1,7 @@
 package com.helloworld.helloworld;
 
 import com.helloworld.helloworld.blocks.HazardBlock;
+import com.helloworld.helloworld.blocks.PortalFrame;
 import com.helloworld.helloworld.blocks.ores.IronSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 
@@ -20,16 +21,17 @@ public class ModBlocks {
 	@GameRegistry.ObjectHolder("helloworld:ironsand")
     public static IronSand ironSand;
 	
+	@GameRegistry.ObjectHolder("helloworld:portalframe")
+    public static PortalFrame portalFrame;
 	
 	
-	
-    
-    //inits block models all blocks should be listed
+	//inits block models all blocks should be listed
     @SideOnly(Side.CLIENT)
     public static void initModels() {
     	//blocks
     	hazardBlock.initModel();
     	testContainerBlock.initModel();
     	ironSand.initModel();
+    	portalFrame.initModel();
     	}
 }

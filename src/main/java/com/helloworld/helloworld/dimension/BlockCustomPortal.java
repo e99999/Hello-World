@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.google.common.cache.LoadingCache;
 import com.helloworld.helloworld.Config;
+import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
@@ -226,12 +227,12 @@ public class BlockCustomPortal extends BlockPortal {
 			for (i = 0; i < 22; ++i) {
 				BlockPos blockpos = p_180120_1_.offset(p_180120_2_, i);
 				if (!this.isEmptyBlock(this.world.getBlockState(blockpos).getBlock())
-						|| this.world.getBlockState(blockpos.down()).getBlock() != Blocks.IRON_BLOCK.getDefaultState().getBlock()) {
+						|| this.world.getBlockState(blockpos.down()).getBlock() != ModBlocks.portalFrame.getDefaultState().getBlock()) {
 					break;
 				}
 			}
 			Block block = this.world.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
-			return block == Blocks.IRON_BLOCK.getDefaultState().getBlock() ? i : 0;
+			return block == ModBlocks.portalFrame.getDefaultState().getBlock() ? i : 0;
 		}
 
 		public int getHeight() {
@@ -255,19 +256,19 @@ public class BlockCustomPortal extends BlockPortal {
 					}
 					if (i == 0) {
 						block = this.world.getBlockState(blockpos.offset(this.leftDir)).getBlock();
-						if (block != Blocks.IRON_BLOCK.getDefaultState().getBlock()) {
+						if (block != ModBlocks.portalFrame.getDefaultState().getBlock()) {
 							break label56;
 						}
 					} else if (i == this.width - 1) {
 						block = this.world.getBlockState(blockpos.offset(this.rightDir)).getBlock();
-						if (block != Blocks.IRON_BLOCK.getDefaultState().getBlock()) {
+						if (block != ModBlocks.portalFrame.getDefaultState().getBlock()) {
 							break label56;
 						}
 					}
 				}
 			}
 			for (int j = 0; j < this.width; ++j) {
-				if (this.world.getBlockState(this.bottomLeft.offset(this.rightDir, j).up(this.height)).getBlock() != Blocks.IRON_BLOCK
+				if (this.world.getBlockState(this.bottomLeft.offset(this.rightDir, j).up(this.height)).getBlock() != ModBlocks.portalFrame
 						.getDefaultState().getBlock()) {
 					this.height = 0;
 					break;
