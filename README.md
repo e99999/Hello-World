@@ -7,7 +7,7 @@ version 1.0 todo list for my mod
 
 [x] - add a block
 
-[ ] - change worldgen
+[x] - change worldgen
 
 [ ] - add a tree
 
@@ -23,7 +23,7 @@ version 1.0 todo list for my mod
 
 [x] - add a biome
 
-[ ] - add a dimension
+[x] - add a dimension
 
 [ ] - add an item pipe that connects to hoppers
 
