@@ -38,27 +38,8 @@ public class OreGen implements IWorldGenerator {
 		
 			//Ore gen for the overworld
 		case 0:
-			runGenerator(ModBlocks.coalGravel.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
-			runGenerator(ModBlocks.coalSand.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			
-			runGenerator(ModBlocks.diamondGravel.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
-			runGenerator(ModBlocks.diamondSand.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			
-			runGenerator(ModBlocks.emeraldGravel.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
-			runGenerator(ModBlocks.emeraldSand.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			
-			runGenerator(ModBlocks.goldGravel.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
-			runGenerator(ModBlocks.goldSand.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			
-			runGenerator(ModBlocks.ironGravel.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
+			//if you use gold for pipes and shit add the gold gravel ore in oceans again - files are saved just need to be put in modblocks and proxy
 			runGenerator(ModBlocks.ironSand.getDefaultState(), 32, 2, 48, 63, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			
-			runGenerator(ModBlocks.lapisGravel.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
-			runGenerator(ModBlocks.lapisSand.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			
-			runGenerator(ModBlocks.redstoneGravel.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.GRAVEL), world, random, chunkX, chunkZ);
-			runGenerator(ModBlocks.redstoneSand.getDefaultState(), 32, 2, 32, 80, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
-			
 			break;
 		
 			//Ore gen for the end

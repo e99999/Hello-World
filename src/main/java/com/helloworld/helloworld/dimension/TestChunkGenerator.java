@@ -3,6 +3,7 @@ package com.helloworld.helloworld.dimension;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,8 +27,6 @@ public class TestChunkGenerator implements IChunkGenerator {
     private final World worldObj;
     private Random random;
     private Biome[] biomesForGeneration;
-
-    private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityPigZombie.class, 75, 4, 16));
 
     private MapGenBase caveGenerator = new MapGenCaves();
     private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();
@@ -95,7 +94,7 @@ public class TestChunkGenerator implements IChunkGenerator {
 //        return biome.getSpawnableList(creatureType);
 
         if (creatureType == EnumCreatureType.MONSTER){
-            return mobs;
+            return null;
         }
         return ImmutableList.of();
 

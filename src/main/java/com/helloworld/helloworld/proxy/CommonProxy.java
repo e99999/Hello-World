@@ -5,20 +5,7 @@ import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.ModDimensions;
 import com.helloworld.helloworld.blocks.HazardBlock;
-import com.helloworld.helloworld.blocks.ores.CoalGravel;
-import com.helloworld.helloworld.blocks.ores.CoalSand;
-import com.helloworld.helloworld.blocks.ores.DiamondGravel;
-import com.helloworld.helloworld.blocks.ores.DiamondSand;
-import com.helloworld.helloworld.blocks.ores.EmeraldGravel;
-import com.helloworld.helloworld.blocks.ores.EmeraldSand;
-import com.helloworld.helloworld.blocks.ores.GoldGravel;
-import com.helloworld.helloworld.blocks.ores.GoldSand;
-import com.helloworld.helloworld.blocks.ores.IronGravel;
 import com.helloworld.helloworld.blocks.ores.IronSand;
-import com.helloworld.helloworld.blocks.ores.LapisGravel;
-import com.helloworld.helloworld.blocks.ores.LapisSand;
-import com.helloworld.helloworld.blocks.ores.RedstoneGravel;
-import com.helloworld.helloworld.blocks.ores.RedstoneSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.dimension.BlockCustomPortal;
@@ -84,33 +71,10 @@ public class CommonProxy {
     @SuppressWarnings("deprecation")
 	@SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        
-    	//blocks
     	event.getRegistry().register(new HazardBlock());
         event.getRegistry().register(new TestContainerBlock());
         GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");
-        
-        //overworld ore blocks
-        event.getRegistry().register(new CoalGravel());
-        event.getRegistry().register(new CoalSand());
-        
-        event.getRegistry().register(new DiamondGravel());
-        event.getRegistry().register(new DiamondSand());
-        
-        event.getRegistry().register(new EmeraldGravel());
-        event.getRegistry().register(new EmeraldSand());
-        
-        event.getRegistry().register(new GoldGravel());
-        event.getRegistry().register(new GoldSand());
-        
-        event.getRegistry().register(new IronGravel());
         event.getRegistry().register(new IronSand());
-        
-        event.getRegistry().register(new LapisGravel());
-        event.getRegistry().register(new LapisSand());
-        
-        event.getRegistry().register(new RedstoneGravel());
-        event.getRegistry().register(new RedstoneSand());
         
     }
 
@@ -126,27 +90,8 @@ public class CommonProxy {
     	event.getRegistry().register(new ItemBlock(ModBlocks.hazardBlock).setRegistryName(ModBlocks.hazardBlock.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));
     	
-    	//overworld ore blocks as items
-    	event.getRegistry().register(new ItemBlock(ModBlocks.coalSand).setRegistryName(ModBlocks.coalSand.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.coalGravel).setRegistryName(ModBlocks.coalGravel.getRegistryName()));
-    	
-    	event.getRegistry().register(new ItemBlock(ModBlocks.diamondSand).setRegistryName(ModBlocks.diamondSand.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.diamondGravel).setRegistryName(ModBlocks.diamondGravel.getRegistryName()));
-    	
-    	event.getRegistry().register(new ItemBlock(ModBlocks.emeraldSand).setRegistryName(ModBlocks.emeraldSand.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.emeraldGravel).setRegistryName(ModBlocks.emeraldGravel.getRegistryName()));
-    	
-    	event.getRegistry().register(new ItemBlock(ModBlocks.goldGravel).setRegistryName(ModBlocks.goldGravel.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.goldSand).setRegistryName(ModBlocks.goldSand.getRegistryName()));
-    	
-    	event.getRegistry().register(new ItemBlock(ModBlocks.ironGravel).setRegistryName(ModBlocks.ironGravel.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.ironSand).setRegistryName(ModBlocks.ironSand.getRegistryName()));
     	
-    	event.getRegistry().register(new ItemBlock(ModBlocks.lapisGravel).setRegistryName(ModBlocks.lapisGravel.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.lapisSand).setRegistryName(ModBlocks.lapisSand.getRegistryName()));
-    	
-    	event.getRegistry().register(new ItemBlock(ModBlocks.redstoneGravel).setRegistryName(ModBlocks.redstoneGravel.getRegistryName()));
-    	event.getRegistry().register(new ItemBlock(ModBlocks.redstoneSand).setRegistryName(ModBlocks.redstoneSand.getRegistryName()));
     }
 
     
