@@ -1,5 +1,6 @@
 package com.helloworld.helloworld;
 
+import com.helloworld.helloworld.items.AlkCoin;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -13,6 +14,10 @@ public class ModItems {
     public static DogeCoin dogeCoin;
 	
 	//not required stored references to items
+	@GameRegistry.ObjectHolder("helloworld:alkcoin")
+	public static AlkCoin alkCoin;
+	
+	//not required stored references to items
 	@GameRegistry.ObjectHolder("helloworld:ironmultitool")
 	public static IronMultiTool ironMultiTool;
 	
@@ -20,6 +25,7 @@ public class ModItems {
 	@SideOnly(Side.CLIENT)
     public static void initModels() {
         dogeCoin.initModel();
+        alkCoin.initModel();
         ironMultiTool.initModel();
     }
 }

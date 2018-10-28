@@ -10,6 +10,7 @@ import com.helloworld.helloworld.blocks.ores.IronSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.dimension.BlockCustomPortal;
+import com.helloworld.helloworld.items.AlkCoin;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
 
@@ -86,6 +87,7 @@ public class CommonProxy {
     	
     	//items
     	event.getRegistry().register(new DogeCoin());
+    	event.getRegistry().register(new AlkCoin());
     	event.getRegistry().register(new IronMultiTool());
     	
     	//blocks as items
