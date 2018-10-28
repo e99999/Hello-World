@@ -63,7 +63,7 @@ public class TestBiome {
 			
 			//Mobs
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityBlaze.class, 100, 2, 6));
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityPigZombie.class, 80, 4, 16));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityPigZombie.class, 60, 4, 16));
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityIronGolem.class, 20, 1, 2));
 			
 		}

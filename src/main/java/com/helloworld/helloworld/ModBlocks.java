@@ -21,6 +21,8 @@ public class ModBlocks {
 	@GameRegistry.ObjectHolder("helloworld:ironsand")
     public static IronSand ironSand;
 	
+	//portal block is located in common proxy atm
+	
 	@GameRegistry.ObjectHolder("helloworld:portalframe")
     public static PortalFrame portalFrame;
 	

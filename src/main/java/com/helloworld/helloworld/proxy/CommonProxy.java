@@ -36,6 +36,7 @@ import java.io.File;
 @Mod.EventBusSubscriber
 public class CommonProxy {
 	
+	//TODO refactor portal stuff like other blocks
 	public static BlockCustomPortal portal;
 	static {
 		portal = (BlockCustomPortal) (new BlockCustomPortal().setUnlocalizedName("testdimension_portal"));}
@@ -69,10 +70,11 @@ public class CommonProxy {
         }
     }
     
-    //register blocks
     @SuppressWarnings("deprecation")
 	@SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+    	
+    	//register blocks
     	event.getRegistry().register(new HazardBlock());
         event.getRegistry().register(new TestContainerBlock());
         GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");

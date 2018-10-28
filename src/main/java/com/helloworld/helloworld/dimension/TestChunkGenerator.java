@@ -1,10 +1,7 @@
 package com.helloworld.helloworld.dimension;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
@@ -93,9 +90,7 @@ public class TestChunkGenerator implements IChunkGenerator {
 //        Biome biome = this.worldObj.getBiome(pos);
 //        return biome.getSpawnableList(creatureType);
 
-        if (creatureType == EnumCreatureType.MONSTER){
-            return null;
-        }
+        
         return ImmutableList.of();
 
     }
