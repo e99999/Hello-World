@@ -1,11 +1,9 @@
-package com.helloworld.helloworld.dimension;
+package com.helloworld.helloworld.toxicdimension;
 
 import java.util.Random;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.fml.relauncher.Side;
@@ -27,24 +25,13 @@ public class TestBiome {
 		biome = new BiomeGenCustom(customProps);
 	}
 
-	public void generateNether(World world, Random random, int chunkX, int chunkZ) {
-	}
-
-	public void generateSurface(World world, Random random, int chunkX, int chunkZ) {
-	}
-
-	public int addFuel(ItemStack fuel) {
-		return 0;
-	}
-
 	static class BiomeGenCustom extends Biome {
 
-		@SuppressWarnings("deprecation")
 		public BiomeGenCustom(Biome.BiomeProperties properties) {
 			super(properties);
 			setRegistryName("testBiome");
 			topBlock = Blocks.GRASS.getDefaultState();
-			fillerBlock = Blocks.STONE.getStateFromMeta(0);
+			fillerBlock = Blocks.STONE.getDefaultState();
 			decorator.generateFalls = true;
 			decorator.treesPerChunk = 0;
 			decorator.flowersPerChunk = 0;

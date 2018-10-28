@@ -1,6 +1,6 @@
 package com.helloworld.helloworld;
 
-import com.helloworld.helloworld.dimension.TestWorldProvider;
+import com.helloworld.helloworld.toxicdimension.TestWorldProvider;
 
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;

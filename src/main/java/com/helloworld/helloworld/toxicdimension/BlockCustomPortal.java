@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.dimension;
+package com.helloworld.helloworld.toxicdimension;
 
 import java.util.Random;
 
@@ -53,6 +53,7 @@ public class BlockCustomPortal extends BlockPortal {
 	}
 
 	@Override
+	@Deprecated
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 		EnumFacing.Axis enumfacingaxis = (EnumFacing.Axis) state.getValue(AXIS);
 		if (enumfacingaxis == EnumFacing.Axis.X) {
@@ -84,16 +85,11 @@ public class BlockCustomPortal extends BlockPortal {
 			double d0 = (double) ((float) pos.getX() + rand.nextFloat());
 			double d1 = (double) ((float) pos.getY() + rand.nextFloat());
 			double d2 = (double) ((float) pos.getZ() + rand.nextFloat());
-			double d3 = ((double) rand.nextFloat() - 0.5D) * 0.5D;
-			double d4 = ((double) rand.nextFloat() - 0.5D) * 0.5D;
-			double d5 = ((double) rand.nextFloat() - 0.5D) * 0.5D;
 			int j = rand.nextInt(2) * 2 - 1;
 			if (world.getBlockState(pos.west()).getBlock() != this && world.getBlockState(pos.east()).getBlock() != this) {
 				d0 = pos.getX() + 0.5D + 0.25D * (double) j;
-				d3 = (double) (rand.nextFloat() * 2.0F * (float) j);
 			} else {
 				d2 = pos.getZ() + 0.5D + 0.25D * (double) j;
-				d5 = (double) (rand.nextFloat() * 2.0F * (float) j);
 			}
 			world.spawnParticle(EnumParticleTypes.FLAME, d0, d1, d2, 0, 0, 0);
 			
@@ -301,9 +297,4 @@ public class BlockCustomPortal extends BlockPortal {
 			}
 		}
 	}
-	
-	//@SideOnly(Side.CLIENT)
-    //public void initModel() {
-    //    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    //}
 }

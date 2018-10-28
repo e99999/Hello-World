@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.dimension;
+package com.helloworld.helloworld.toxicdimension;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.MathHelper;
@@ -69,9 +69,8 @@ public class NormalTerrainGenerator {
         this.maxLimitPerlinNoise = ctx.getLPerlin2();
         this.mainPerlinNoise = ctx.getPerlin();
         this.surfaceNoise = ctx.getHeight();
-//        this.field_185983_b = ctx.getScale();
         this.depthNoise = ctx.getDepth();
-//        this.field_185985_d = ctx.getForest();
+
     }
 
 
@@ -102,7 +101,7 @@ public class NormalTerrainGenerator {
                         f2 += f5;
                     }
                 }
-
+                if (f2 !=0) {
                 f /= f2;
                 f1 /= f2;
                 f = f * 0.9F + 0.1F;
@@ -161,6 +160,7 @@ public class NormalTerrainGenerator {
                 }
             }
         }
+    }
     }
 
 

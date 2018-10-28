@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.dimension;
+package com.helloworld.helloworld.toxicdimension;
 
 import java.util.Random;
 
@@ -28,11 +28,11 @@ public class CustomTree extends WorldGenAbstractTree {
 				if (j >= position.getY() + 1 + i - 2) {
 					k = 2;
 				}
-				BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+				BlockPos.MutableBlockPos blockposmutableblockpos = new BlockPos.MutableBlockPos();
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
 						if (j >= 0 && j < worldIn.getHeight()) {
-							if (!this.isReplaceable(worldIn, blockpos$mutableblockpos.setPos(l, j, i1))) {
+							if (!this.isReplaceable(worldIn, blockposmutableblockpos.setPos(l, j, i1))) {
 								flag = false;
 							}
 						} else {
@@ -46,14 +46,12 @@ public class CustomTree extends WorldGenAbstractTree {
 			} else {
 				Block ground = worldIn.getBlockState(position).getBlock();
 				Block ground2 = worldIn.getBlockState(position.add(0, -1, 0)).getBlock();
-				if (!(ground == Blocks.GRASS.getDefaultState().getBlock() || ground == Blocks.STONE.getStateFromMeta(0).getBlock()
-						|| ground2 == Blocks.GRASS.getDefaultState().getBlock() || ground2 == Blocks.STONE.getStateFromMeta(0).getBlock()))
+				if (!(ground == Blocks.GRASS.getDefaultState().getBlock() || ground == Blocks.STONE.getDefaultState().getBlock()
+						|| ground2 == Blocks.GRASS.getDefaultState().getBlock() || ground2 == Blocks.STONE.getDefaultState().getBlock()))
 					return false;
 				IBlockState state = worldIn.getBlockState(position.down());
 				if (position.getY() < worldIn.getHeight() - i - 1) {
 					state.getBlock().onPlantGrow(state, worldIn, position.down(), position);
-					int k2 = 3;
-					int l2 = 0;
 					for (int i3 = position.getY() - 3 + i; i3 <= position.getY() + i; ++i3) {
 						int i4 = i3 - (position.getY() + i);
 						int j1 = 1 - i4 / 2;
@@ -77,7 +75,7 @@ public class CustomTree extends WorldGenAbstractTree {
 						state = worldIn.getBlockState(upN);
 						if (state.getBlock().isAir(state, worldIn, upN) || state.getBlock().isLeaves(state, worldIn, upN)
 								|| state.getBlock() == Blocks.AIR.getDefaultState().getBlock()) {
-							this.setBlockAndNotifyAdequately(worldIn, position.up(j3), Blocks.LOG2.getStateFromMeta(1));
+							this.setBlockAndNotifyAdequately(worldIn, position.up(j3), Blocks.LOG.getDefaultState());
 						}
 					}
 					return true;
@@ -88,11 +86,6 @@ public class CustomTree extends WorldGenAbstractTree {
 		} else {
 			return false;
 		}
-	}
-
-	@Override
-	protected boolean canGrowInto(Block blockType) {
-		return super.canGrowInto(blockType);
 	}
 
 	@Override

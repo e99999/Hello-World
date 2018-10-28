@@ -12,9 +12,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
 import com.helloworld.helloworld.commands.TeleportCommand;
-import com.helloworld.helloworld.dimension.TestBiome;
 import com.helloworld.helloworld.gen.OreGen;
 import com.helloworld.helloworld.proxy.CommonProxy;
+import com.helloworld.helloworld.toxicdimension.TestBiome;
 
 @Mod(modid = HelloWorld.MODID, name = HelloWorld.MODNAME, version = HelloWorld.MODVERSION, useMetadata = true)
 public class HelloWorld {

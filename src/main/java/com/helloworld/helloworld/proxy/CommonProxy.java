@@ -9,10 +9,10 @@ import com.helloworld.helloworld.blocks.PortalFrame;
 import com.helloworld.helloworld.blocks.ores.IronSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
-import com.helloworld.helloworld.dimension.BlockCustomPortal;
 import com.helloworld.helloworld.items.AlkCoin;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
+import com.helloworld.helloworld.toxicdimension.BlockCustomPortal;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
