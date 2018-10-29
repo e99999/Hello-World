@@ -1,6 +1,7 @@
-package com.helloworld.helloworld.toxicdimension;
+package com.helloworld.helloworld.toxicdimension.world;
 
 import com.helloworld.helloworld.ModDimensions;
+import com.helloworld.helloworld.toxicdimension.biome.BiomeProviderCustom;
 
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;

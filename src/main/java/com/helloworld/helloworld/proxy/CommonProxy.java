@@ -5,14 +5,15 @@ import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.ModDimensions;
 import com.helloworld.helloworld.blocks.HazardBlock;
-import com.helloworld.helloworld.blocks.PortalFrame;
+import com.helloworld.helloworld.blocks.PortalFrameBlock;
 import com.helloworld.helloworld.blocks.ores.IronSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.AlkCoin;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
-import com.helloworld.helloworld.toxicdimension.ToxicPortalBlock;
+import com.helloworld.helloworld.toxicdimension.biome.ToxicBiome;
+import com.helloworld.helloworld.toxicdimension.blocks.ToxicPortalBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -55,6 +56,7 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent e) {
     	NetworkRegistry.INSTANCE.registerGuiHandler(HelloWorld.instance, new GuiProxy());
+    	ForgeRegistries.BIOMES.register(ToxicBiome.biome);
     }
 
     //check if the config is changed and save current on post init
@@ -73,7 +75,7 @@ public class CommonProxy {
         event.getRegistry().register(new TestContainerBlock());
         GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");
         event.getRegistry().register(new IronSand());
-        event.getRegistry().register(new PortalFrame());
+        event.getRegistry().register(new PortalFrameBlock());
         
         ForgeRegistries.BLOCKS.register(ModBlocks.portal);
         

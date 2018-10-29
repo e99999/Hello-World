@@ -1,10 +1,11 @@
-package com.helloworld.helloworld.toxicdimension;
+package com.helloworld.helloworld.toxicdimension.blocks;
 
 import java.util.Random;
 
 import com.google.common.cache.LoadingCache;
 import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.ModBlocks;
+import com.helloworld.helloworld.toxicdimension.world.ToxicTeleporter;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;

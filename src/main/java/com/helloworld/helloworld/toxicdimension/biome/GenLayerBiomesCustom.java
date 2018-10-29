@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.toxicdimension;
+package com.helloworld.helloworld.toxicdimension.biome;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;

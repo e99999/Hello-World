@@ -1,6 +1,6 @@
 package com.helloworld.helloworld;
 
-import com.helloworld.helloworld.toxicdimension.ToxicWorldProvider;
+import com.helloworld.helloworld.toxicdimension.world.ToxicWorldProvider;
 
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;

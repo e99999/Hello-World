@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.toxicdimension;
+package com.helloworld.helloworld.toxicdimension.world;
 
 
 import com.helloworld.helloworld.ModBlocks;

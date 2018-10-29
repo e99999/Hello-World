@@ -1,10 +1,10 @@
 package com.helloworld.helloworld;
 
 import com.helloworld.helloworld.blocks.HazardBlock;
-import com.helloworld.helloworld.blocks.PortalFrame;
+import com.helloworld.helloworld.blocks.PortalFrameBlock;
 import com.helloworld.helloworld.blocks.ores.IronSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
-import com.helloworld.helloworld.toxicdimension.ToxicPortalBlock;
+import com.helloworld.helloworld.toxicdimension.blocks.ToxicPortalBlock;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -26,7 +26,7 @@ public class ModBlocks {
 	public static ToxicPortalBlock portal;
 	
 	@GameRegistry.ObjectHolder("helloworld:portalframe")
-    public static PortalFrame portalFrame;
+    public static PortalFrameBlock portalFrame;
 	
 	
 	//inits block models all blocks should be listed

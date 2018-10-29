@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.toxicdimension;
+package com.helloworld.helloworld.toxicdimension.biome;
 
 import java.util.List;
 import java.util.Random;

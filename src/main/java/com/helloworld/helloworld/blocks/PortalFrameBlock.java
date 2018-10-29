@@ -11,10 +11,10 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class PortalFrame extends Block {
+public class PortalFrameBlock extends Block {
 
     //basic information about this block
-	public PortalFrame() {
+	public PortalFrameBlock() {
         super(Material.IRON);
         setUnlocalizedName(HelloWorld.MODID + ".portalframe");
         setRegistryName("portalframe");

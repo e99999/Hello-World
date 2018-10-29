@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.toxicdimension;
+package com.helloworld.helloworld.toxicdimension.world;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.MathHelper;

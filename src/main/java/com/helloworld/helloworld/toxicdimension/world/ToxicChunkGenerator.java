@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.toxicdimension;
+package com.helloworld.helloworld.toxicdimension.world;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.EnumCreatureType;
