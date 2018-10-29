@@ -48,12 +48,8 @@ public class CommonProxy {
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "helloworld.cfg"));
         
-		ForgeRegistries.BLOCKS.register(ModBlocks.portal);
-		ForgeRegistries.ITEMS.register(new ItemBlock(ModBlocks.portal).setRegistryName(ModBlocks.portal.getRegistryName()));
-        
 		Config.readConfig();
-        ModDimensions.init();
-        
+        ModDimensions.init();  
     }
 
 
@@ -79,6 +75,8 @@ public class CommonProxy {
         event.getRegistry().register(new IronSand());
         event.getRegistry().register(new PortalFrame());
         
+        ForgeRegistries.BLOCKS.register(ModBlocks.portal);
+        
     }
 
     //register items first then register items for blocks
@@ -95,6 +93,8 @@ public class CommonProxy {
     	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.ironSand).setRegistryName(ModBlocks.ironSand.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.portalFrame).setRegistryName(ModBlocks.portalFrame.getRegistryName()));
+    	
+    	ForgeRegistries.ITEMS.register(new ItemBlock(ModBlocks.portal).setRegistryName(ModBlocks.portal.getRegistryName()));
     	
     }
 

@@ -28,7 +28,6 @@ public class HelloWorld {
 
     @Mod.Instance
     public static HelloWorld instance;
-
     public static Logger logger;
 
     //below sets up your mod in 3 stages then triggers each even from common proxy

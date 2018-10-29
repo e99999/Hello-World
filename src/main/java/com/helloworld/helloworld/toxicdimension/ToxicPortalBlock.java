@@ -34,9 +34,9 @@ public class ToxicPortalBlock extends BlockPortal {
 	public ToxicPortalBlock() {
 		super();
 		setRegistryName("testdimension_portal");
-		this.setHardness(-1.0F);
-		this.setLightLevel(0.75F);
-		this.setSoundType(SoundType.GLASS);	
+		setHardness(-1.0F);
+		setLightLevel(0.75F);
+		setSoundType(SoundType.GLASS);	
 	}
 	
 	@Override
