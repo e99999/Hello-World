@@ -5,7 +5,6 @@ import java.util.Random;
 import com.google.common.cache.LoadingCache;
 import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.ModBlocks;
-import com.helloworld.helloworld.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
@@ -34,6 +33,7 @@ public class ToxicPortalBlock extends BlockPortal {
 
 	public ToxicPortalBlock() {
 		super();
+		setRegistryName("testdimension_portal");
 		this.setHardness(-1.0F);
 		this.setLightLevel(0.75F);
 		this.setSoundType(SoundType.GLASS);	
@@ -175,7 +175,7 @@ public class ToxicPortalBlock extends BlockPortal {
 	}
 
 	private ToxicTeleporter getTeleporterForDimension(Entity entity, BlockPos pos, int dimid) {
-		BlockPattern.PatternHelper blockpatternpatternhelper =CommonProxy.portal.createPatternHelper(entity.world, new BlockPos(pos));
+		BlockPattern.PatternHelper blockpatternpatternhelper = ModBlocks.portal.createPatternHelper(entity.world, new BlockPos(pos));
 		double d0 = blockpatternpatternhelper.getForwards().getAxis() == EnumFacing.Axis.X ? (double) blockpatternpatternhelper
 				.getFrontTopLeft().getZ() : (double) blockpatternpatternhelper.getFrontTopLeft().getX();
 		double d1 = blockpatternpatternhelper.getForwards().getAxis() == EnumFacing.Axis.X ? entity.posZ : entity.posX;
@@ -255,7 +255,7 @@ public class ToxicPortalBlock extends BlockPortal {
 					if (!this.isEmptyBlock(block)) {
 						break label56;
 					}
-					if (block ==CommonProxy.portal) {
+					if (block == ModBlocks.portal) {
 						++this.portalBlockCount;
 					}
 					if (i == 0) {
@@ -289,7 +289,7 @@ public class ToxicPortalBlock extends BlockPortal {
 		}
 
 		protected boolean isEmptyBlock(Block blockIn) {
-			return blockIn.getDefaultState().getMaterial() == Material.AIR || blockIn == Blocks.FIRE || blockIn ==CommonProxy.portal;
+			return blockIn.getDefaultState().getMaterial() == Material.AIR || blockIn == Blocks.FIRE || blockIn == ModBlocks.portal;
 		}
 
 		public boolean isValid() {
@@ -300,7 +300,7 @@ public class ToxicPortalBlock extends BlockPortal {
 			for (int i = 0; i < this.width; ++i) {
 				BlockPos blockpos = this.bottomLeft.offset(this.rightDir, i);
 				for (int j = 0; j < this.height; ++j) {
-					this.world.setBlockState(blockpos.up(j), CommonProxy.portal.getDefaultState().withProperty(BlockPortal.AXIS, this.axis), 2);
+					this.world.setBlockState(blockpos.up(j), ModBlocks.portal.getDefaultState().withProperty(BlockPortal.AXIS, this.axis), 2);
 				}
 			}
 		}

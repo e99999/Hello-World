@@ -2,7 +2,6 @@ package com.helloworld.helloworld.toxicdimension;
 
 
 import com.helloworld.helloworld.ModBlocks;
-import com.helloworld.helloworld.proxy.CommonProxy;
 
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.state.IBlockState;
@@ -80,8 +79,8 @@ public class ToxicTeleporter extends Teleporter {
 				for (int j1 = -128; j1 <= 128; ++j1) {
 					for (BlockPos blockpos1 = blockpos3.add(i1, this.world.getActualHeight() - 1 - blockpos3.getY(), j1); blockpos1.getY() >= 0; blockpos1 = blockpos2) {
 						blockpos2 = blockpos1.down();
-						if (this.world.getBlockState(blockpos1).getBlock() == CommonProxy.portal) {
-							for (blockpos2 = blockpos1.down(); this.world.getBlockState(blockpos2).getBlock() == CommonProxy.portal; blockpos2 = blockpos2
+						if (this.world.getBlockState(blockpos1).getBlock() == ModBlocks.portal) {
+							for (blockpos2 = blockpos1.down(); this.world.getBlockState(blockpos2).getBlock() == ModBlocks.portal; blockpos2 = blockpos2
 									.down()) {
 								blockpos1 = blockpos2;
 							}
@@ -101,7 +100,7 @@ public class ToxicTeleporter extends Teleporter {
 			}
 			double d5 = (double) blockpos.getX() + 0.5D;
 			double d7 = (double) blockpos.getZ() + 0.5D;
-			BlockPattern.PatternHelper blockpatternpatternhelper = CommonProxy.portal.createPatternHelper(this.world, blockpos);
+			BlockPattern.PatternHelper blockpatternpatternhelper = ModBlocks.portal.createPatternHelper(this.world, blockpos);
 			boolean flag1 = blockpatternpatternhelper.getForwards().rotateY().getAxisDirection() == EnumFacing.AxisDirection.NEGATIVE;
 			double d2 = blockpatternpatternhelper.getForwards().getAxis() == EnumFacing.Axis.X ? (double) blockpatternpatternhelper
 					.getFrontTopLeft().getZ() : (double) blockpatternpatternhelper.getFrontTopLeft().getX();
@@ -272,7 +271,7 @@ public class ToxicTeleporter extends Teleporter {
 				}
 			}
 		}
-		IBlockState iblockstate = CommonProxy.portal.getDefaultState().withProperty(BlockPortal.AXIS, l6 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
+		IBlockState iblockstate = ModBlocks.portal.getDefaultState().withProperty(BlockPortal.AXIS, l6 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
 		for (int i8 = 0; i8 < 4; ++i8) {
 			for (int l8 = 0; l8 < 4; ++l8) {
 				for (int l9 = -1; l9 < 4; ++l9) {

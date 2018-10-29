@@ -4,6 +4,7 @@ import com.helloworld.helloworld.blocks.HazardBlock;
 import com.helloworld.helloworld.blocks.PortalFrame;
 import com.helloworld.helloworld.blocks.ores.IronSand;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
+import com.helloworld.helloworld.toxicdimension.ToxicPortalBlock;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -22,6 +23,7 @@ public class ModBlocks {
     public static IronSand ironSand;
 	
 	//portal block is located in common proxy atm
+	public static ToxicPortalBlock portal;
 	
 	@GameRegistry.ObjectHolder("helloworld:portalframe")
     public static PortalFrame portalFrame;

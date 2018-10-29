@@ -37,9 +37,8 @@ import java.io.File;
 public class CommonProxy {
 	
 	//TODO refactor portal stuff like other blocks
-	public static ToxicPortalBlock portal;
 	static {
-		portal = (ToxicPortalBlock) (new ToxicPortalBlock().setUnlocalizedName("testdimension_portal"));}
+		ModBlocks.portal = (ToxicPortalBlock) (new ToxicPortalBlock().setUnlocalizedName("testdimension_portal"));}
 
     //config instance
     public static Configuration config;
@@ -49,9 +48,8 @@ public class CommonProxy {
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "helloworld.cfg"));
         
-        portal.setRegistryName("testdimension_portal");
-		ForgeRegistries.BLOCKS.register(portal);
-		ForgeRegistries.ITEMS.register(new ItemBlock(portal).setRegistryName(portal.getRegistryName()));
+		ForgeRegistries.BLOCKS.register(ModBlocks.portal);
+		ForgeRegistries.ITEMS.register(new ItemBlock(ModBlocks.portal).setRegistryName(ModBlocks.portal.getRegistryName()));
         
 		Config.readConfig();
         ModDimensions.init();

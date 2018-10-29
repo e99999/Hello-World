@@ -1,7 +1,7 @@
 package com.helloworld.helloworld.items;
 
 import com.helloworld.helloworld.HelloWorld;
-import com.helloworld.helloworld.proxy.CommonProxy;
+import com.helloworld.helloworld.ModBlocks;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -60,7 +60,7 @@ public class AlkCoin extends Item {
 		} else {
 			if (world.isAirBlock(pos)) {
 				world.playSound(entity, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-				CommonProxy.portal.trySpawnPortal(world, pos);
+				ModBlocks.portal.trySpawnPortal(world, pos);
 			}
 			itemstack.damageItem(1, entity);
 			return EnumActionResult.SUCCESS;
