@@ -19,8 +19,8 @@ public class ToxicBiome {
 	static {
 		Biome.BiomeProperties customProps = new Biome.BiomeProperties("testBiome");
 		customProps.setRainfall(0.7F);
-		customProps.setBaseHeight(0.25F);
-		customProps.setHeightVariation(0.4F);
+		customProps.setBaseHeight(0.0F);
+		customProps.setHeightVariation(0.25F);
 		customProps.setWaterColor(-13421824);
 		biome = new BiomeGenCustom(customProps);
 	}

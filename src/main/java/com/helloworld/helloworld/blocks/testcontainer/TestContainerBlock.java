@@ -39,7 +39,7 @@ public class TestContainerBlock extends Block implements ITileEntityProvider {
         setRegistryName("testcontainerblock");
         setCreativeTab(CreativeTabs.DECORATIONS);
         setHardness(5.0F);
-        setResistance(10.0F);
+        setResistance(40.0F);
         setSoundType(SoundType.METAL);
         setHarvestLevel("pickaxe", 1);
         

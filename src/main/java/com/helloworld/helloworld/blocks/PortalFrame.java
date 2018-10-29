@@ -20,7 +20,7 @@ public class PortalFrame extends Block {
         setRegistryName("portalframe");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHardness(3.0F);
-        setResistance(30.0F);
+        setResistance(40.0F);
         setHarvestLevel("pickaxe", 2);
         this.setLightLevel(0.5F);  
     }
