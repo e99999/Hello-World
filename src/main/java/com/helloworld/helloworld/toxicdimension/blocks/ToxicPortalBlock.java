@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.google.common.cache.LoadingCache;
 import com.helloworld.helloworld.Config;
+import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.toxicdimension.world.ToxicTeleporter;
 
@@ -15,10 +16,12 @@ import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
@@ -27,6 +30,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -34,11 +38,18 @@ public class ToxicPortalBlock extends BlockPortal {
 
 	public ToxicPortalBlock() {
 		super();
+		setUnlocalizedName(HelloWorld.MODID + ".testdimension_portal");
 		setRegistryName("testdimension_portal");
 		setHardness(-1.0F);
 		setLightLevel(0.75F);
 		setSoundType(SoundType.GLASS);	
 	}
+	
+	
+	@SideOnly(Side.CLIENT)
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+    }
 	
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {

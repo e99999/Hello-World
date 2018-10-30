@@ -39,7 +39,7 @@ import java.io.File;
 public class CommonProxy {
 	
 	static {
-		ModBlocks.portal = (ToxicPortalBlock) (new ToxicPortalBlock().setUnlocalizedName("testdimension_portal"));} //TODO refactor last bit of portal stuff like other blocks
+		ModBlocks.portal = (ToxicPortalBlock) (new ToxicPortalBlock());} //TODO refactor last bit of portal stuff like other blocks
 
     //config instance
     public static Configuration config;

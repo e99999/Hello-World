@@ -41,6 +41,7 @@ public class ModBlocks {
     	testContainerBlock.initModel();
     	ironSand.initModel();
     	
+    	portal.initModel();
     	portalFrame.initModel();
     	toxicgrassBlock.initModel();
     	}

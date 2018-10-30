@@ -1,7 +1,8 @@
 {
   "textures": {
     "particle": "helloworld:blocks/portalfixed",
-    "portal": "helloworld:blocks/portalfixed"
+    "portal": "helloworld:blocks/portalfixed",
+    "inventory": "helloworld:blocks/portalfixed"
   },
   "elements": [
     {
