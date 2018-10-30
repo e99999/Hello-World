@@ -16,7 +16,7 @@ public class ToxicBiome {
 	public static BiomeGenCustom biome;
 	public static Object instance;
 	static {
-		Biome.BiomeProperties customProps = new Biome.BiomeProperties("testBiome");
+		Biome.BiomeProperties customProps = new Biome.BiomeProperties("toxicBiome");
 		customProps.setRainfall(0.7F);
 		customProps.setBaseHeight(0.0F);
 		customProps.setHeightVariation(0.25F);
@@ -28,14 +28,14 @@ public class ToxicBiome {
 
 		public BiomeGenCustom(Biome.BiomeProperties properties) {
 			super(properties);
-			setRegistryName("testBiome");
+			setRegistryName("toxicBiome");
 			topBlock = ModBlocks.toxicgrassBlock.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();
 			decorator.generateFalls = true;
 			decorator.treesPerChunk = 0;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
-			decorator.deadBushPerChunk = 1;
+			decorator.deadBushPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;

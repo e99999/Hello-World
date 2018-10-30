@@ -43,7 +43,7 @@ public class Config {
 
     private static void initDimensionConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_DIMENSIONS, "Dimension configuration");
-        dimensionId = cfg.getInt("dimensionId", CATEGORY_DIMENSIONS, dimensionId, -1000, 1000, "The Id to use for the dimension");
+        dimensionId = cfg.getInt("dimensionId", CATEGORY_DIMENSIONS, dimensionId, -1000, 1000, "The Id to use for the toxic dimension");
 
     }
 }

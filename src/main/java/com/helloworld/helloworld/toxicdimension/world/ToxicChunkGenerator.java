@@ -9,15 +9,10 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCaves;
-import net.minecraftforge.event.terraingen.TerrainGen;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
-
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 
 public class ToxicChunkGenerator implements IChunkGenerator {
 
@@ -25,7 +20,6 @@ public class ToxicChunkGenerator implements IChunkGenerator {
     private Random random;
     private Biome[] biomesForGeneration;
 
-    //private MapGenBase caveGenerator = new MapGenCaves();
     private ToxicTerrainGenerator terraingen = new ToxicTerrainGenerator();
 
     public ToxicChunkGenerator(World worldObj) {
@@ -33,7 +27,6 @@ public class ToxicChunkGenerator implements IChunkGenerator {
         long seed = worldObj.getSeed();
         this.random = new Random((seed + 516) * 314);
         terraingen.setup(worldObj, random);
-        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
     }
 
     @Override
@@ -49,9 +42,6 @@ public class ToxicChunkGenerator implements IChunkGenerator {
         this.biomesForGeneration = this.worldObj.getBiomeProvider().getBiomes(this.biomesForGeneration, x * 16, z * 16, 16, 16);
         // This will replace stone with the biome specific stones
         terraingen.replaceBiomeBlocks(x, z, chunkprimer, this, biomesForGeneration);
-
-        // Generate caves
-        //this.caveGenerator.generate(this.worldObj, x, z, chunkprimer);
 
         Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
 
@@ -85,15 +75,8 @@ public class ToxicChunkGenerator implements IChunkGenerator {
 
     @Override
     public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
-        // If you want normal creatures appropriate for this biome then uncomment the
-        // following two lines:
-//        Biome biome = this.worldObj.getBiome(pos);
-//        return biome.getSpawnableList(creatureType);
-
-        
-        return ImmutableList.of();
-
-    }
+    	return ImmutableList.of();
+    	}
 
     @Nullable
     @Override
@@ -109,6 +92,6 @@ public class ToxicChunkGenerator implements IChunkGenerator {
     
     @Override
     public void recreateStructures(Chunk chunkIn, int x, int z) {
-
+    	/* needs this for class implementation */
     }
 }

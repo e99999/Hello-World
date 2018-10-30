@@ -1,11 +1,11 @@
 package com.helloworld.helloworld.blocks;
 
 import com.helloworld.helloworld.HelloWorld;
+import com.helloworld.helloworld.ModItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.item.Item;
@@ -21,7 +21,7 @@ public class HazardBlock extends Block {
         super(Material.ROCK);
         setUnlocalizedName(HelloWorld.MODID + ".hazardblock");
         setRegistryName("hazardblock");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setCreativeTab(ModItems.tabHelloWorld);
         setHardness(5.0F);
         setResistance(60.0F);
         setHarvestLevel("pickaxe", 2);

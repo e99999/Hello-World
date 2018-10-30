@@ -38,9 +38,8 @@ import java.io.File;
 @Mod.EventBusSubscriber
 public class CommonProxy {
 	
-	//TODO refactor portal stuff like other blocks
 	static {
-		ModBlocks.portal = (ToxicPortalBlock) (new ToxicPortalBlock().setUnlocalizedName("testdimension_portal"));}
+		ModBlocks.portal = (ToxicPortalBlock) (new ToxicPortalBlock().setUnlocalizedName("testdimension_portal"));} //TODO refactor last bit of portal stuff like other blocks
 
     //config instance
     public static Configuration config;
@@ -49,7 +48,6 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "helloworld.cfg"));
-        
 		Config.readConfig();
         ModDimensions.init();  
     }
@@ -72,11 +70,16 @@ public class CommonProxy {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
     	
     	//register blocks
+    	HelloWorld.logger.info("Registering Blocks");
     	event.getRegistry().register(new HazardBlock());
         event.getRegistry().register(new TestContainerBlock());
+        //TODO use new method to register this te
         GameRegistry.registerTileEntity(TestContainerTileEntity.class, HelloWorld.MODID + "_testcontainerblock");
+        
+        //register ores
         event.getRegistry().register(new IronSand());
         
+        //register toxic world stuff
         event.getRegistry().register(new ToxicPortalFrameBlock());
         event.getRegistry().register(new ToxicGrassBlock());
         ForgeRegistries.BLOCKS.register(ModBlocks.portal);
@@ -88,15 +91,20 @@ public class CommonProxy {
     public static void registerItems(RegistryEvent.Register<Item> event) {
     	
     	//items
+    	HelloWorld.logger.info("Registering Items");
     	event.getRegistry().register(new DogeCoin());
     	event.getRegistry().register(new AlkCoin());
     	event.getRegistry().register(new IronMultiTool());
     	
     	//blocks as items
+    	HelloWorld.logger.info("Registering Blocks as Items");
     	event.getRegistry().register(new ItemBlock(ModBlocks.hazardBlock).setRegistryName(ModBlocks.hazardBlock.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.testContainerBlock).setRegistryName(ModBlocks.testContainerBlock.getRegistryName()));
+    	
+    	//ore blocks as items
     	event.getRegistry().register(new ItemBlock(ModBlocks.ironSand).setRegistryName(ModBlocks.ironSand.getRegistryName()));
     	
+    	//toxic world stuff
     	event.getRegistry().register(new ItemBlock(ModBlocks.portalFrame).setRegistryName(ModBlocks.portalFrame.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.toxicgrassBlock).setRegistryName(ModBlocks.toxicgrassBlock.getRegistryName()));
     	ForgeRegistries.ITEMS.register(new ItemBlock(ModBlocks.portal).setRegistryName(ModBlocks.portal.getRegistryName()));

@@ -1,0 +1,13 @@
+item.helloworld.dogecoin.name=Doge Credit
+item.helloworld.alkcoin.name=Alkalus Credit
+item.helloworld.ironmultitool.name=Iron Multi Tool
+
+tile.helloworld.hazardblock.name=Hazard Block
+tile.helloworld.testcontainerblock.name=Test Container
+tile.helloworld.ironsand.name=Black Sand
+
+tile.helloworld.portalframe.name=Containment Frame
+tile.helloworld.toxicgrassblock.name=Unstable Earth
+
+
+itemGroup.tabHelloWorld=Hello World

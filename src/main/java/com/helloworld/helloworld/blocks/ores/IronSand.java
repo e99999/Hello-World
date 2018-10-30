@@ -1,12 +1,12 @@
 package com.helloworld.helloworld.blocks.ores;
 
 import com.helloworld.helloworld.HelloWorld;
+import com.helloworld.helloworld.ModItems;
 
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -18,7 +18,7 @@ public class IronSand extends BlockFalling {
 		super(Material.SAND);
 		setUnlocalizedName(HelloWorld.MODID + ".ironsand");
         setRegistryName("ironsand");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setCreativeTab(ModItems.tabHelloWorld);
         setHardness(0.5F);
         setSoundType(SoundType.SAND);
         setHarvestLevel("shovel", 0);

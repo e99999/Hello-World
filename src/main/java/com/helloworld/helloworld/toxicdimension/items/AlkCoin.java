@@ -2,9 +2,9 @@ package com.helloworld.helloworld.toxicdimension.items;
 
 import com.helloworld.helloworld.HelloWorld;
 import com.helloworld.helloworld.ModBlocks;
+import com.helloworld.helloworld.ModItems;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
@@ -29,7 +29,7 @@ public class AlkCoin extends Item {
 		this.setMaxDamage(64);
 		setRegistryName("alkcoin");      
         setUnlocalizedName(HelloWorld.MODID + ".alkcoin");
-        setCreativeTab(CreativeTabs.MISC);
+        setCreativeTab(ModItems.tabHelloWorld);
     }
     
     //init texture

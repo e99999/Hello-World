@@ -3,6 +3,7 @@ package com.helloworld.helloworld.toxicdimension.blocks;
 import java.util.Random;
 
 import com.helloworld.helloworld.HelloWorld;
+import com.helloworld.helloworld.ModItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -12,7 +13,6 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -32,7 +32,7 @@ public class ToxicGrassBlock extends Block {
 		super(Material.GRASS);
 		setUnlocalizedName(HelloWorld.MODID + ".toxicgrassblock");
         setRegistryName("toxicgrassblock");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setCreativeTab(ModItems.tabHelloWorld);
         setHardness(1.0F);
         setSoundType(SoundType.GROUND);
         setHarvestLevel("shovel", 0);
@@ -63,6 +63,7 @@ public class ToxicGrassBlock extends Block {
     }
 
     @Override
+    @Deprecated 
     public IBlockState getStateFromMeta(int meta) {
         return getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 7));
     }

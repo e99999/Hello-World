@@ -1,11 +1,11 @@
 package com.helloworld.helloworld.toxicdimension.blocks;
 
 import com.helloworld.helloworld.HelloWorld;
+import com.helloworld.helloworld.ModItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -18,7 +18,7 @@ public class ToxicPortalFrameBlock extends Block {
         super(Material.IRON);
         setUnlocalizedName(HelloWorld.MODID + ".portalframe");
         setRegistryName("portalframe");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setCreativeTab(ModItems.tabHelloWorld);
         setHardness(3.0F);
         setResistance(40.0F);
         setHarvestLevel("pickaxe", 2);

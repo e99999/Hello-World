@@ -1,9 +1,9 @@
 package com.helloworld.helloworld.items;
 
 import com.helloworld.helloworld.HelloWorld;
+import com.helloworld.helloworld.ModItems;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -15,7 +15,7 @@ public class DogeCoin extends Item {
 	public DogeCoin() {
         setRegistryName("dogecoin");        // The unique name (within your mod) that identifies this item
         setUnlocalizedName(HelloWorld.MODID + ".dogecoin");     // Used for localization (en_US.lang)
-        setCreativeTab(CreativeTabs.MISC);
+        setCreativeTab(ModItems.tabHelloWorld);
     }
     
     //init texture
