@@ -1,11 +1,10 @@
 package com.helloworld.helloworld.toxicdimension.biome;
 
-import java.util.Random;
+import com.helloworld.helloworld.ModBlocks;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraft.entity.monster.EntityBlaze;
@@ -30,7 +29,7 @@ public class ToxicBiome {
 		public BiomeGenCustom(Biome.BiomeProperties properties) {
 			super(properties);
 			setRegistryName("testBiome");
-			topBlock = Blocks.GRASS.getDefaultState();
+			topBlock = ModBlocks.toxicgrassBlock.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();
 			decorator.generateFalls = true;
 			decorator.treesPerChunk = 0;
@@ -71,11 +70,6 @@ public class ToxicBiome {
 		@Override
 		public int getSkyColorByTemp(float currentTemperature) {
 			return -3381760;
-		}
-		
-		@Override
-		public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-			return new ToxicTree();
 		}
 	}
 }

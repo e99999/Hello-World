@@ -1,8 +1,9 @@
 package com.helloworld.helloworld;
 
-import com.helloworld.helloworld.items.AlkCoin;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
+import com.helloworld.helloworld.toxicdimension.items.AlkCoin;
+
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

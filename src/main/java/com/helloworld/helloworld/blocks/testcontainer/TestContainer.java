@@ -16,7 +16,7 @@ public class TestContainer extends Container {
     public TestContainer(IInventory playerInventory, TestContainerTileEntity te) {
         this.te = te;
 
-        // This container references items out of our own inventory (the 9 slots we hold ourselves)
+        // This container references items out of our own inventory (the 27 slots we hold ourselves)
         // as well as the slots from the player inventory so that the user can transfer items between
         // both inventories. The two calls below make sure that slots are defined for both inventories.
         addOwnSlots();

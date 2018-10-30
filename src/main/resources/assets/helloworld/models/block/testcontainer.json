@@ -2,11 +2,11 @@
   "parent": "block/cube",
   "textures": {
     "particle": "helloworld:blocks/testcontainer",
-    "down": "helloworld:blocks/machinebottom",
-    "up": "helloworld:blocks/machinetop",
-    "east": "helloworld:blocks/machineside",
-    "west": "helloworld:blocks/machineside",
+    "down": "helloworld:blocks/machine_bottom",
+    "up": "helloworld:blocks/machine_top",
+    "east": "helloworld:blocks/machine_side",
+    "west": "helloworld:blocks/machine_side",
     "north": "helloworld:blocks/testcontainer",
-    "south": "helloworld:blocks/machineside"
+    "south": "helloworld:blocks/machine_side"
   }
 }

@@ -12,7 +12,7 @@ public class TestContainerTileEntity extends TileEntity {
 
     public static final int SIZE = 27;
 
-    // This item handler will hold our nine inventory slots
+    // This item handler will hold our 27 inventory slots
     private ItemStackHandler itemStackHandler = new ItemStackHandler(SIZE) {
         @Override
         protected void onContentsChanged(int slot) {
