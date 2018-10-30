@@ -11,10 +11,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
 import com.helloworld.helloworld.commands.TeleportCommand;
-import com.helloworld.helloworld.gen.OreGen;
 import com.helloworld.helloworld.proxy.CommonProxy;
+import com.helloworld.helloworld.world.OreGen;
 
-@Mod(modid = HelloWorld.MODID, name = HelloWorld.MODNAME, version = HelloWorld.MODVERSION, useMetadata = true)
+@Mod(modid = HelloWorld.MODID, name = HelloWorld.MODNAME, version = HelloWorld.MODVERSION, dependencies = "required-after:forge@[14.23.5.2772,)", useMetadata = true)
 public class HelloWorld {
 
     public static final String MODID = "helloworld";

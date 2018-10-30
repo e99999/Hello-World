@@ -25,7 +25,7 @@ public class ToxicChunkGenerator implements IChunkGenerator {
     private Random random;
     private Biome[] biomesForGeneration;
 
-    private MapGenBase caveGenerator = new MapGenCaves();
+    //private MapGenBase caveGenerator = new MapGenCaves();
     private ToxicTerrainGenerator terraingen = new ToxicTerrainGenerator();
 
     public ToxicChunkGenerator(World worldObj) {
@@ -33,7 +33,7 @@ public class ToxicChunkGenerator implements IChunkGenerator {
         long seed = worldObj.getSeed();
         this.random = new Random((seed + 516) * 314);
         terraingen.setup(worldObj, random);
-        caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
+        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ToxicChunkGenerator implements IChunkGenerator {
         terraingen.replaceBiomeBlocks(x, z, chunkprimer, this, biomesForGeneration);
 
         // Generate caves
-        this.caveGenerator.generate(this.worldObj, x, z, chunkprimer);
+        //this.caveGenerator.generate(this.worldObj, x, z, chunkprimer);
 
         Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
 

@@ -1,4 +1,4 @@
-package com.helloworld.helloworld.gen;
+package com.helloworld.helloworld.world;
 
 import java.util.Random;
 

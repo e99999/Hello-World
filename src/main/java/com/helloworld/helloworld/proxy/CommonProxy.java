@@ -2,6 +2,7 @@ package com.helloworld.helloworld.proxy;
 
 import com.helloworld.helloworld.Config;
 import com.helloworld.helloworld.HelloWorld;
+import com.helloworld.helloworld.ModBiomes;
 import com.helloworld.helloworld.ModBlocks;
 import com.helloworld.helloworld.ModDimensions;
 import com.helloworld.helloworld.blocks.HazardBlock;
@@ -10,7 +11,6 @@ import com.helloworld.helloworld.blocks.testcontainer.TestContainerBlock;
 import com.helloworld.helloworld.blocks.testcontainer.TestContainerTileEntity;
 import com.helloworld.helloworld.items.DogeCoin;
 import com.helloworld.helloworld.items.IronMultiTool;
-import com.helloworld.helloworld.toxicdimension.biome.ToxicBiome;
 import com.helloworld.helloworld.toxicdimension.blocks.ToxicPortalFrameBlock;
 import com.helloworld.helloworld.toxicdimension.items.AlkCoin;
 import com.helloworld.helloworld.toxicdimension.blocks.ToxicGrassBlock;
@@ -57,7 +57,7 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent e) {
     	NetworkRegistry.INSTANCE.registerGuiHandler(HelloWorld.instance, new GuiProxy());
-    	ForgeRegistries.BIOMES.register(ToxicBiome.biome);
+    	ModBiomes.init();
     }
 
     //check if the config is changed and save current on post init
@@ -79,7 +79,6 @@ public class CommonProxy {
         
         event.getRegistry().register(new ToxicPortalFrameBlock());
         event.getRegistry().register(new ToxicGrassBlock());
-        
         ForgeRegistries.BLOCKS.register(ModBlocks.portal);
         
     }
@@ -100,7 +99,6 @@ public class CommonProxy {
     	
     	event.getRegistry().register(new ItemBlock(ModBlocks.portalFrame).setRegistryName(ModBlocks.portalFrame.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.toxicgrassBlock).setRegistryName(ModBlocks.toxicgrassBlock.getRegistryName()));
-    	
     	ForgeRegistries.ITEMS.register(new ItemBlock(ModBlocks.portal).setRegistryName(ModBlocks.portal.getRegistryName()));
     	
     }

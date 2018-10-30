@@ -167,7 +167,7 @@ public class ToxicTerrainGenerator {
     public void generate(int chunkX, int chunkZ, ChunkPrimer primer) {
         generateHeightmap(chunkX * 4, 0, chunkZ * 4);
 
-        byte waterLevel = 73;
+        byte waterLevel = 70;
         for (int x4 = 0; x4 < 4; ++x4) {
             int l = x4 * 5;
             int i1 = (x4 + 1) * 5;
