@@ -23,7 +23,7 @@ public class ModBlocks {
 	@GameRegistry.ObjectHolder("helloworld:ironsand")
     public static IronSand ironSand;
 	
-	
+	@GameRegistry.ObjectHolder("helloworld:testdimension_portal")
 	public static ToxicPortalBlock portal;
 	
 	@GameRegistry.ObjectHolder("helloworld:portalframe")

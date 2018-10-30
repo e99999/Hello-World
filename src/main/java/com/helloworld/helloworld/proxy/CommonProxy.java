@@ -27,7 +27,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.io.File;
@@ -37,9 +36,6 @@ import java.io.File;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
-	
-	static {
-		ModBlocks.portal = (ToxicPortalBlock) (new ToxicPortalBlock());} //TODO refactor last bit of portal stuff like other blocks
 
     //config instance
     public static Configuration config;
@@ -82,7 +78,7 @@ public class CommonProxy {
         //register toxic world stuff
         event.getRegistry().register(new ToxicPortalFrameBlock());
         event.getRegistry().register(new ToxicGrassBlock());
-        ForgeRegistries.BLOCKS.register(ModBlocks.portal);
+        event.getRegistry().register(new ToxicPortalBlock());
         
     }
 
@@ -107,8 +103,7 @@ public class CommonProxy {
     	//toxic world stuff
     	event.getRegistry().register(new ItemBlock(ModBlocks.portalFrame).setRegistryName(ModBlocks.portalFrame.getRegistryName()));
     	event.getRegistry().register(new ItemBlock(ModBlocks.toxicgrassBlock).setRegistryName(ModBlocks.toxicgrassBlock.getRegistryName()));
-    	ForgeRegistries.ITEMS.register(new ItemBlock(ModBlocks.portal).setRegistryName(ModBlocks.portal.getRegistryName()));
-    	
+    	event.getRegistry().register(new ItemBlock(ModBlocks.portal).setRegistryName(ModBlocks.portal.getRegistryName()));  	
     }
 
     
